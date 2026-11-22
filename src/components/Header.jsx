@@ -47,6 +47,12 @@ export default function Header({
           <div className="hidden lg:flex items-center gap-3 text-xs">
             {profile && (
               <div className="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg">
+                <span className={`font-bold text-xs flex items-center gap-1 ${
+                  profile.diet_type === 'veg' ? 'text-emerald-400' : profile.diet_type === 'eggetarian' ? 'text-amber-400' : 'text-rose-400'
+                }`}>
+                  <span>{profile.diet_type === 'veg' ? '🌱 Pure Veg' : profile.diet_type === 'eggetarian' ? '🥚 Veg + Eggs' : '🥩 Non-Veg'}</span>
+                </span>
+                <span className="text-slate-600">|</span>
                 <span className="text-slate-400">Goal:</span>
                 <span className="font-bold uppercase text-amber-400 tracking-wide">
                   {profile.goal?.replace('_', ' ')}

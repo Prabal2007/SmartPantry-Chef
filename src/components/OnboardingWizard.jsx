@@ -113,9 +113,46 @@ export default function OnboardingWizard({
     }
   };
 
+  const isFoodCompliantWithDiet = (food, dietType) => {
+    const tags = food?.diet_tags || [];
+    const id = food?.id || '';
+    const isNonVeg = tags.includes('non_veg') || ['chicken_breast', 'fish_rohu'].includes(id);
+    const isEgg = tags.includes('egg') || ['eggs', 'egg_whites'].includes(id);
+
+    if (dietType === 'veg') {
+      return !isNonVeg && !isEgg;
+    }
+    if (dietType === 'eggetarian') {
+      return !isNonVeg;
+    }
+    return true; // 'non_veg'
+  };
+
+  const handleDietChange = (newDiet) => {
+    setProfile(prev => ({ ...prev, diet_type: newDiet }));
+    // Immediately cleanse non-compliant foods from current pantry inventory
+    setPantry(prev => {
+      const updated = { ...prev };
+      Object.keys(updated).forEach(foodId => {
+        const food = foods.find(f => f.id === foodId);
+        if (food && !isFoodCompliantWithDiet(food, newDiet)) {
+          delete updated[foodId];
+        }
+      });
+      return updated;
+    });
+  };
+
   const categories = [
     { id: 'all', label: 'All Items' },
-    { id: 'protein', label: '🥩 Proteins & Legumes' },
+    {
+      id: 'protein',
+      label: profile.diet_type === 'veg'
+        ? '🌱 Proteins & Legumes'
+        : profile.diet_type === 'eggetarian'
+        ? '🥚 Proteins & Eggs'
+        : '🥩 Proteins, Meat & Eggs'
+    },
     { id: 'grain', label: '🌾 Grains & Carbs' },
     { id: 'vegetable', label: '🥦 Vegetables' },
     { id: 'fruit', label: '🍎 Fruits' },
@@ -123,9 +160,10 @@ export default function OnboardingWizard({
   ];
 
   const filteredFoods = foods.filter(f => {
+    const matchDiet = isFoodCompliantWithDiet(f, profile.diet_type);
     const matchCat = selectedCategory === 'all' || f.category === selectedCategory;
     const matchSearch = f.name.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchCat && matchSearch;
+    return matchDiet && matchCat && matchSearch;
   });
 
   return (
@@ -270,12 +308,12 @@ export default function OnboardingWizard({
               <label className="text-xs font-bold uppercase tracking-wider text-slate-400">Dietary Pattern</label>
               <select
                 value={profile.diet_type}
-                onChange={(e) => setProfile({ ...profile, diet_type: e.target.value })}
+                onChange={(e) => handleDietChange(e.target.value)}
                 className="w-full mt-1.5 px-4 py-2.5 bg-slate-950 border border-slate-750 rounded-xl text-slate-100 font-semibold focus:border-amber-500 focus:outline-none"
               >
-                <option value="veg">Vegetarian (Pure Veg + Dairy)</option>
-                <option value="eggetarian">Eggetarian (Veg + Eggs)</option>
-                <option value="non_veg">Non-Vegetarian (Chicken, Fish, Eggs)</option>
+                <option value="veg">🟢 Pure Vegetarian (Zero Eggs, Zero Meat/Fish)</option>
+                <option value="eggetarian">🟡 Vegetarian with Eggs (Eggs Allowed, Zero Meat/Fish)</option>
+                <option value="non_veg">🔴 Non-Vegetarian (All: Meat, Fish, Eggs)</option>
               </select>
             </div>
           </div>
@@ -506,6 +544,47 @@ export default function OnboardingWizard({
             >
               <span>⚡ Load Student Kitchen Preset</span>
             </button>
+          </div>
+
+          {/* Active Dietary Filter Switcher */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-slate-950/70 border border-slate-800 rounded-2xl">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Dietary Filter:</span>
+              <span className="text-xs text-slate-300 font-medium">
+                {profile.diet_type === 'veg' && '🌱 Pure Veg (Non-veg & eggs excluded)'}
+                {profile.diet_type === 'eggetarian' && '🥚 Veg + Eggs (Non-veg excluded, eggs included)'}
+                {profile.diet_type === 'non_veg' && '🥩 Non-Vegetarian (All pantry goods available)'}
+              </span>
+            </div>
+
+            <div className="flex items-center gap-1.5 self-start sm:self-auto">
+              {[
+                { id: 'veg', label: 'Pure Veg', icon: '🌱' },
+                { id: 'eggetarian', label: 'With Eggs', icon: '🥚' },
+                { id: 'non_veg', label: 'Non-Veg', icon: '🥩' }
+              ].map(opt => {
+                const isActive = profile.diet_type === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => handleDietChange(opt.id)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                      isActive
+                        ? opt.id === 'veg'
+                          ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
+                          : opt.id === 'eggetarian'
+                          ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
+                          : 'bg-rose-500 text-white shadow-md shadow-rose-500/20'
+                        : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700'
+                    }`}
+                  >
+                    <span>{opt.icon}</span>
+                    <span>{opt.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Filter Bar */}

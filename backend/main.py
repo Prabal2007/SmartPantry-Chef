@@ -23,6 +23,9 @@ from engine import (
     generate_workout_plan,
     calculate_dish_cost,
     get_dish_recipe_urls,
+    filter_pantry_by_diet,
+    is_dish_compliant_with_diet,
+    normalize_diet_type,
     FOODS_LIST,
     FOOD_MAP,
     DISHES_LIST,
@@ -307,9 +310,10 @@ def generate_full_plan(req: PlanGenerateRequest, db: Session = Depends(get_db)):
         skeletal_muscle_pct=p.skeletal_muscle_pct
     )
 
-    # 2. Sufficiency Audit
+    # 2. Sufficiency Audit (Filtering pantry to items compliant with diet)
+    clean_pantry = filter_pantry_by_diet(req.pantry, p.diet_type)
     audit = evaluate_pantry_sufficiency(
-        pantry=req.pantry,
+        pantry=clean_pantry,
         daily_calories=biometrics["target_calories"],
         daily_protein=biometrics["protein_target_g"],
         diet_type=p.diet_type
@@ -318,7 +322,7 @@ def generate_full_plan(req: PlanGenerateRequest, db: Session = Depends(get_db)):
     min_gap_result = {"min_gap_cost_inr": 0.0, "gap_cart": {}, "itemized_shopping_list": []}
     if not audit["is_sufficient"]:
         min_gap_result = solve_minimum_gap(
-            pantry=req.pantry,
+            pantry=clean_pantry,
             shortfalls=audit["shortfalls"],
             diet_type=p.diet_type,
             effective_prices=effective_prices
@@ -326,7 +330,7 @@ def generate_full_plan(req: PlanGenerateRequest, db: Session = Depends(get_db)):
 
     # 3. Extra Budget Upgrade
     extra_upgrade = upgrade_budget_variety(
-        current_pantry_ids=set(req.pantry.keys()),
+        current_pantry_ids=set(clean_pantry.keys()),
         min_gap_cart=min_gap_result["gap_cart"],
         extra_budget_inr=req.extra_budget_inr,
         diet_type=p.diet_type,
@@ -334,7 +338,7 @@ def generate_full_plan(req: PlanGenerateRequest, db: Session = Depends(get_db)):
     )
 
     # 4. Total Allowed Food IDs for Cooking
-    available_food_ids = set(req.pantry.keys()).union(min_gap_result["gap_cart"].keys()).union(extra_upgrade["extra_cart"].keys())
+    available_food_ids = set(clean_pantry.keys()).union(min_gap_result["gap_cart"].keys()).union(extra_upgrade["extra_cart"].keys())
 
     # 5. 7-Day Meal Timetable
     meal_plan = generate_7day_meal_plan(
@@ -384,8 +388,9 @@ def upgrade_budget_plan(req: BudgetUpgradeRequest, db: Session = Depends(get_db)
         skeletal_muscle_pct=p.skeletal_muscle_pct
     )
 
+    clean_pantry = filter_pantry_by_diet(req.pantry, p.diet_type)
     audit = evaluate_pantry_sufficiency(
-        pantry=req.pantry,
+        pantry=clean_pantry,
         daily_calories=biometrics["target_calories"],
         daily_protein=biometrics["protein_target_g"],
         diet_type=p.diet_type
@@ -394,21 +399,21 @@ def upgrade_budget_plan(req: BudgetUpgradeRequest, db: Session = Depends(get_db)
     min_gap_result = {"min_gap_cost_inr": 0.0, "gap_cart": {}, "itemized_shopping_list": []}
     if not audit["is_sufficient"]:
         min_gap_result = solve_minimum_gap(
-            pantry=req.pantry,
+            pantry=clean_pantry,
             shortfalls=audit["shortfalls"],
             diet_type=p.diet_type,
             effective_prices=effective_prices
         )
 
     extra_upgrade = upgrade_budget_variety(
-        current_pantry_ids=set(req.pantry.keys()),
+        current_pantry_ids=set(clean_pantry.keys()),
         min_gap_cart=min_gap_result["gap_cart"],
         extra_budget_inr=req.extra_budget_inr,
         diet_type=p.diet_type,
         effective_prices=effective_prices
     )
 
-    available_food_ids = set(req.pantry.keys()).union(min_gap_result["gap_cart"].keys()).union(extra_upgrade["extra_cart"].keys())
+    available_food_ids = set(clean_pantry.keys()).union(min_gap_result["gap_cart"].keys()).union(extra_upgrade["extra_cart"].keys())
 
     meal_plan = generate_7day_meal_plan(
         available_food_ids=available_food_ids,
@@ -432,11 +437,7 @@ def get_plan_alternatives(slot: Optional[str] = None, diet_type: Optional[str] =
     if slot:
         results = [d for d in results if d["slot"] == slot]
     if diet_type:
-        dt = diet_type.lower()
-        if dt == "veg":
-            results = [d for d in results if d["diet_type"] == "veg"]
-        elif dt == "eggetarian":
-            results = [d for d in results if d["diet_type"] in ["veg", "eggetarian"]]
+        results = [d for d in results if is_dish_compliant_with_diet(d, diet_type)]
     return [
         {
             **d,

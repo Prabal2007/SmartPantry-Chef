@@ -269,19 +269,76 @@ def is_dish_cookable(dish: Dict[str, Any], available_food_ids: set) -> bool:
             return False
     return True
 
+def normalize_diet_type(diet_type: str) -> str:
+    """Normalizes any diet type string into 'veg', 'eggetarian', or 'non_veg'."""
+    dt = (diet_type or "").strip().lower().replace("-", "_").replace(" ", "_")
+    if dt in ["veg", "vegetarian", "pure_veg", "pureveg", "vegan"]:
+        return "veg"
+    if dt in ["eggetarian", "egg", "eggs", "with_eggs", "veg_with_egg", "veg_with_eggs"]:
+        return "eggetarian"
+    return "non_veg"
+
+def is_food_compliant_with_diet(food: Dict[str, Any], diet_type: str) -> bool:
+    """
+    Checks if a food item is compliant with the given diet type.
+    - veg (pure veg): ZERO non_veg tags, ZERO egg tags.
+    - eggetarian (with eggs): ZERO non_veg tags, egg tags allowed.
+    - non_veg: all foods allowed.
+    """
+    f_tags = [t.lower() for t in food.get("diet_tags", [])]
+    fid = food.get("id", "")
+    is_non_veg = "non_veg" in f_tags or fid in ["chicken_breast", "fish_rohu"]
+    is_egg = "egg" in f_tags or fid in ["eggs", "egg_whites"]
+
+    dt = normalize_diet_type(diet_type)
+    if dt == "veg":
+        return not is_non_veg and not is_egg
+    elif dt == "eggetarian":
+        return not is_non_veg
+    return True
+
+def is_dish_compliant_with_diet(dish: Dict[str, Any], diet_type: str) -> bool:
+    """
+    Checks if a dish and all its ingredients are strictly compliant with the given diet type.
+    - veg (pure veg): dish diet_type must be 'veg' AND zero egg / zero non-veg ingredients.
+    - eggetarian (with eggs): dish diet_type in ['veg', 'eggetarian'] AND zero non-veg ingredients.
+    - non_veg: all dishes allowed.
+    """
+    dt = normalize_diet_type(diet_type)
+    dish_diet = dish.get("diet_type", "").lower()
+
+    if dt == "veg":
+        if dish_diet != "veg":
+            return False
+        for ing in dish.get("ingredients", []):
+            fid = ing["food_id"]
+            if fid in FOOD_MAP:
+                if not is_food_compliant_with_diet(FOOD_MAP[fid], "veg"):
+                    return False
+        return True
+    elif dt == "eggetarian":
+        if dish_diet not in ["veg", "eggetarian"]:
+            return False
+        for ing in dish.get("ingredients", []):
+            fid = ing["food_id"]
+            if fid in FOOD_MAP:
+                if not is_food_compliant_with_diet(FOOD_MAP[fid], "eggetarian"):
+                    return False
+        return True
+    return True
+
 def filter_dishes_by_diet(dishes: List[Dict[str, Any]], diet_type: str) -> List[Dict[str, Any]]:
-    """Filters dishes by user diet type."""
-    dt = diet_type.lower()
-    results = []
-    for d in dishes:
-        dish_diet = d["diet_type"].lower()
-        if dt == "veg" and dish_diet == "veg":
-            results.append(d)
-        elif dt == "eggetarian" and dish_diet in ["veg", "eggetarian"]:
-            results.append(d)
-        elif dt == "non_veg":
-            results.append(d)
-    return results
+    """Filters dishes strictly by user diet type ensuring 0% diet violations."""
+    return [d for d in dishes if is_dish_compliant_with_diet(d, diet_type)]
+
+def filter_pantry_by_diet(pantry: Dict[str, float], diet_type: str) -> Dict[str, float]:
+    """Filters pantry inventory to only retain items strictly compliant with user diet type."""
+    dt = normalize_diet_type(diet_type)
+    return {
+        fid: qty for fid, qty in pantry.items()
+        if fid in FOOD_MAP and is_food_compliant_with_diet(FOOD_MAP[fid], dt)
+    }
+
 
 def evaluate_pantry_sufficiency(
     pantry: Dict[str, float], # { food_id: quantity }
@@ -308,8 +365,9 @@ def evaluate_pantry_sufficiency(
     avail_fruit_servings = 0.0
 
     pantry_food_ids = set()
+    diet_pantry = filter_pantry_by_diet(pantry, diet_type)
 
-    for fid, qty in pantry.items():
+    for fid, qty in diet_pantry.items():
         if fid not in FOOD_MAP or qty <= 0:
             continue
         food = FOOD_MAP[fid]
@@ -410,16 +468,9 @@ def solve_minimum_gap(
     Ranks diet_type-compliant foods by lowest cost per unit of missing nutrient
     (e.g., ₹ per gram of protein) using effective_prices to clear all shortfall gates with absolute minimum INR.
     """
-    dt = diet_type.lower()
-    compliant_foods = []
-    for f in FOODS_LIST:
-        f_tags = [t.lower() for t in f["diet_tags"]]
-        if dt == "veg" and "veg" in f_tags:
-            compliant_foods.append(f)
-        elif dt == "eggetarian" and any(t in ["veg", "egg"] for t in f_tags):
-            compliant_foods.append(f)
-        elif dt == "non_veg":
-            compliant_foods.append(f)
+    dt = normalize_diet_type(diet_type)
+    compliant_foods = [f for f in FOODS_LIST if is_food_compliant_with_diet(f, dt)]
+    diet_pantry = filter_pantry_by_diet(pantry, dt)
 
     gap_cart = {} # { food_id: quantity }
     remaining_protein = shortfalls["missing_protein_g"]
@@ -431,7 +482,7 @@ def solve_minimum_gap(
     # 1. Fill Missing Slots First:
     # For any slot with 0 cookable dishes, find the cheapest dish matching diet_type
     allowed_dishes = filter_dishes_by_diet(DISHES_LIST, dt)
-    active_food_ids = set(pantry.keys())
+    active_food_ids = set(diet_pantry.keys())
 
     for slot in missing_slots:
         slot_dishes = [d for d in allowed_dishes if d["slot"] == slot]
@@ -572,8 +623,12 @@ def upgrade_budget_variety(
             "unlocked_dishes": []
         }
 
-    dt = diet_type.lower()
-    combined_ids = set(current_pantry_ids).union(min_gap_cart.keys())
+    dt = normalize_diet_type(diet_type)
+    compliant_pantry_ids = {
+        fid for fid in current_pantry_ids
+        if fid in FOOD_MAP and is_food_compliant_with_diet(FOOD_MAP[fid], dt)
+    }
+    combined_ids = set(compliant_pantry_ids).union(min_gap_cart.keys())
 
     # Find candidate dishes that are NOT currently cookable
     allowed_dishes = filter_dishes_by_diet(DISHES_LIST, dt)
@@ -670,7 +725,8 @@ def generate_7day_meal_plan(
     Strictly satisfies: calories = round(protein_g * 4 + carbs_g * 4 + fats_g * 9).
     Dish costs reflect 3-tier effective prices.
     """
-    allowed_dishes = filter_dishes_by_diet(DISHES_LIST, diet_type)
+    dt = normalize_diet_type(diet_type)
+    allowed_dishes = filter_dishes_by_diet(DISHES_LIST, dt)
     cookable = [d for d in allowed_dishes if is_dish_cookable(d, available_food_ids)]
 
     by_slot = {

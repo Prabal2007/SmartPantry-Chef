@@ -16,12 +16,9 @@ export default function PlanConfig({
   isLoading
 }) {
   const DIET_OPTIONS = [
-    { id: 'Balanced', label: 'Balanced', desc: 'Equal macros & nutrient variety', icon: '🥗' },
-    { id: 'Vegetarian', label: 'Vegetarian', desc: 'No meat or fish', icon: '🥕' },
-    { id: 'High-Protein', label: 'High-Protein', desc: 'Maximizes protein intake', icon: '🍗' },
-    { id: 'Vegan', label: 'Vegan', desc: '100% plant-based items', icon: '🌱' },
-    { id: 'Low-Carb', label: 'Low-Carb', desc: 'Reduced carbs, higher fats', icon: '🥑' },
-    { id: 'Non-Vegetarian', label: 'Non-Veg', desc: 'Includes chicken, fish & eggs', icon: '🥩' }
+    { id: 'veg', label: 'Pure Veg', desc: 'Zero meat, fish or eggs', icon: '🌱' },
+    { id: 'eggetarian', label: 'With Eggs', desc: 'Eggs allowed, zero meat/fish', icon: '🥚' },
+    { id: 'non_veg', label: 'Non-Veg', desc: 'Chicken, fish, eggs & all foods', icon: '🥩' }
   ];
 
   return (
