@@ -27,3 +27,21 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Python & Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+ENV/
+env/
+*.db
+backend/nutriforge.db
+.pytest_cache/
+.coverage
+htmlcov/

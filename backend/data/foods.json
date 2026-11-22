@@ -1,0 +1,786 @@
+[
+  {
+    "id": "soya_chunks",
+    "name": "Soya Chunks",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 13.0,
+    "protein_per_100": 52.0,
+    "carbs_per_100": 33.0,
+    "fats_per_100": 0.5,
+    "fiber_per_100": 13.0,
+    "budget_tier": "essential",
+    "calories_per_100": 344
+  },
+  {
+    "id": "eggs",
+    "name": "Whole Eggs",
+    "category": "protein",
+    "diet_tags": [
+      "egg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 7.0,
+    "protein_per_100": 6.3,
+    "carbs_per_100": 0.4,
+    "fats_per_100": 5.0,
+    "fiber_per_100": 0.0,
+    "budget_tier": "essential",
+    "calories_per_100": 72
+  },
+  {
+    "id": "egg_whites",
+    "name": "Egg Whites",
+    "category": "protein",
+    "diet_tags": [
+      "egg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 5.0,
+    "protein_per_100": 3.6,
+    "carbs_per_100": 0.2,
+    "fats_per_100": 0.1,
+    "fiber_per_100": 0.0,
+    "budget_tier": "essential",
+    "calories_per_100": 16
+  },
+  {
+    "id": "chicken_breast",
+    "name": "Chicken Breast (Boneless)",
+    "category": "protein",
+    "diet_tags": [
+      "non_veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 26.0,
+    "protein_per_100": 31.0,
+    "carbs_per_100": 0.0,
+    "fats_per_100": 3.6,
+    "fiber_per_100": 0.0,
+    "budget_tier": "mid",
+    "calories_per_100": 156
+  },
+  {
+    "id": "paneer",
+    "name": "Fresh Paneer (Cottage Cheese)",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 25.0,
+    "protein_per_100": 18.0,
+    "carbs_per_100": 4.0,
+    "fats_per_100": 20.0,
+    "fiber_per_100": 0.0,
+    "budget_tier": "mid",
+    "calories_per_100": 268
+  },
+  {
+    "id": "tofu",
+    "name": "Firm Tofu",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 20.0,
+    "protein_per_100": 12.0,
+    "carbs_per_100": 2.0,
+    "fats_per_100": 5.0,
+    "fiber_per_100": 1.2,
+    "budget_tier": "mid",
+    "calories_per_100": 101
+  },
+  {
+    "id": "moong_dal",
+    "name": "Yellow Moong Dal (Split)",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 15.0,
+    "protein_per_100": 24.0,
+    "carbs_per_100": 60.0,
+    "fats_per_100": 1.2,
+    "fiber_per_100": 16.0,
+    "budget_tier": "essential",
+    "calories_per_100": 347
+  },
+  {
+    "id": "toor_dal",
+    "name": "Toor / Arhar Dal",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 16.0,
+    "protein_per_100": 22.0,
+    "carbs_per_100": 62.0,
+    "fats_per_100": 1.5,
+    "fiber_per_100": 15.0,
+    "budget_tier": "essential",
+    "calories_per_100": 350
+  },
+  {
+    "id": "chana_black",
+    "name": "Kala Chana (Brown Chickpeas)",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 11.0,
+    "protein_per_100": 20.0,
+    "carbs_per_100": 60.0,
+    "fats_per_100": 5.0,
+    "fiber_per_100": 17.0,
+    "budget_tier": "essential",
+    "calories_per_100": 365
+  },
+  {
+    "id": "chickpeas_kabuli",
+    "name": "White Chickpeas / Chole",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 14.0,
+    "protein_per_100": 19.0,
+    "carbs_per_100": 61.0,
+    "fats_per_100": 6.0,
+    "fiber_per_100": 17.0,
+    "budget_tier": "essential",
+    "calories_per_100": 374
+  },
+  {
+    "id": "rajma",
+    "name": "Red Kidney Beans (Rajma)",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 15.0,
+    "protein_per_100": 22.0,
+    "carbs_per_100": 60.0,
+    "fats_per_100": 1.0,
+    "fiber_per_100": 15.0,
+    "budget_tier": "essential",
+    "calories_per_100": 337
+  },
+  {
+    "id": "roasted_chana",
+    "name": "Roasted Chana (Bhuna Chana)",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 14.0,
+    "protein_per_100": 22.5,
+    "carbs_per_100": 58.0,
+    "fats_per_100": 5.5,
+    "fiber_per_100": 16.0,
+    "budget_tier": "essential",
+    "calories_per_100": 372
+  },
+  {
+    "id": "fish_rohu",
+    "name": "Rohu Fish Fillet",
+    "category": "protein",
+    "diet_tags": [
+      "non_veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 25.0,
+    "protein_per_100": 17.0,
+    "carbs_per_100": 0.0,
+    "fats_per_100": 2.0,
+    "fiber_per_100": 0.0,
+    "budget_tier": "mid",
+    "calories_per_100": 86
+  },
+  {
+    "id": "whey_protein",
+    "name": "Whey Protein Isolate/Concentrate",
+    "category": "protein",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 80.0,
+    "protein_per_100": 24.0,
+    "carbs_per_100": 3.0,
+    "fats_per_100": 1.5,
+    "fiber_per_100": 0.5,
+    "budget_tier": "premium",
+    "calories_per_100": 122
+  },
+  {
+    "id": "wheat_atta",
+    "name": "Whole Wheat Flour (Atta)",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 4.5,
+    "protein_per_100": 12.0,
+    "carbs_per_100": 72.0,
+    "fats_per_100": 1.7,
+    "fiber_per_100": 11.0,
+    "budget_tier": "essential",
+    "calories_per_100": 351
+  },
+  {
+    "id": "rice_white",
+    "name": "White Basmati/Sona Masoori Rice",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 6.0,
+    "protein_per_100": 7.0,
+    "carbs_per_100": 78.0,
+    "fats_per_100": 0.6,
+    "fiber_per_100": 1.3,
+    "budget_tier": "essential",
+    "calories_per_100": 345
+  },
+  {
+    "id": "oats_rolled",
+    "name": "Rolled / Instant Oats",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 18.0,
+    "protein_per_100": 13.5,
+    "carbs_per_100": 66.0,
+    "fats_per_100": 7.0,
+    "fiber_per_100": 10.0,
+    "budget_tier": "mid",
+    "calories_per_100": 381
+  },
+  {
+    "id": "poha",
+    "name": "Flattened Rice (Poha)",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 7.0,
+    "protein_per_100": 7.0,
+    "carbs_per_100": 77.0,
+    "fats_per_100": 1.0,
+    "fiber_per_100": 2.0,
+    "budget_tier": "essential",
+    "calories_per_100": 345
+  },
+  {
+    "id": "bread_wheat",
+    "name": "Whole Wheat Bread Slice",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 3.5,
+    "protein_per_100": 3.5,
+    "carbs_per_100": 14.0,
+    "fats_per_100": 1.0,
+    "fiber_per_100": 2.0,
+    "budget_tier": "essential",
+    "calories_per_100": 79
+  },
+  {
+    "id": "besan",
+    "name": "Gram Flour (Besan)",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 10.0,
+    "protein_per_100": 22.0,
+    "carbs_per_100": 58.0,
+    "fats_per_100": 5.5,
+    "fiber_per_100": 10.0,
+    "budget_tier": "essential",
+    "calories_per_100": 370
+  },
+  {
+    "id": "suji_semolina",
+    "name": "Semolina (Rava / Suji)",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 6.0,
+    "protein_per_100": 12.0,
+    "carbs_per_100": 73.0,
+    "fats_per_100": 1.0,
+    "fiber_per_100": 4.0,
+    "budget_tier": "essential",
+    "calories_per_100": 349
+  },
+  {
+    "id": "sweet_potato",
+    "name": "Sweet Potato (Shakarkandi)",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 6.0,
+    "protein_per_100": 1.6,
+    "carbs_per_100": 20.0,
+    "fats_per_100": 0.1,
+    "fiber_per_100": 3.0,
+    "budget_tier": "essential",
+    "calories_per_100": 87
+  },
+  {
+    "id": "potato",
+    "name": "Potato (Aloo)",
+    "category": "grain",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 3.5,
+    "protein_per_100": 2.0,
+    "carbs_per_100": 17.0,
+    "fats_per_100": 0.1,
+    "fiber_per_100": 2.2,
+    "budget_tier": "essential",
+    "calories_per_100": 77
+  },
+  {
+    "id": "spinach",
+    "name": "Fresh Spinach (Palak)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 4.0,
+    "protein_per_100": 2.9,
+    "carbs_per_100": 3.6,
+    "fats_per_100": 0.4,
+    "fiber_per_100": 2.2,
+    "budget_tier": "essential",
+    "calories_per_100": 30
+  },
+  {
+    "id": "onion",
+    "name": "Red Onion (Pyaz)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 4.0,
+    "protein_per_100": 1.1,
+    "carbs_per_100": 9.3,
+    "fats_per_100": 0.1,
+    "fiber_per_100": 1.7,
+    "budget_tier": "essential",
+    "calories_per_100": 42
+  },
+  {
+    "id": "tomato",
+    "name": "Fresh Tomato (Tamatar)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 4.0,
+    "protein_per_100": 0.9,
+    "carbs_per_100": 3.9,
+    "fats_per_100": 0.2,
+    "fiber_per_100": 1.2,
+    "budget_tier": "essential",
+    "calories_per_100": 21
+  },
+  {
+    "id": "broccoli",
+    "name": "Fresh Broccoli",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 12.0,
+    "protein_per_100": 2.8,
+    "carbs_per_100": 6.6,
+    "fats_per_100": 0.4,
+    "fiber_per_100": 2.6,
+    "budget_tier": "mid",
+    "calories_per_100": 41
+  },
+  {
+    "id": "carrot",
+    "name": "Carrot (Gajar)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 5.0,
+    "protein_per_100": 0.9,
+    "carbs_per_100": 9.6,
+    "fats_per_100": 0.2,
+    "fiber_per_100": 2.8,
+    "budget_tier": "essential",
+    "calories_per_100": 44
+  },
+  {
+    "id": "capsicum",
+    "name": "Green Capsicum / Bell Pepper",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 8.0,
+    "protein_per_100": 1.3,
+    "carbs_per_100": 4.6,
+    "fats_per_100": 0.2,
+    "fiber_per_100": 1.7,
+    "budget_tier": "essential",
+    "calories_per_100": 25
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber (Kheera)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 4.0,
+    "protein_per_100": 0.7,
+    "carbs_per_100": 3.6,
+    "fats_per_100": 0.1,
+    "fiber_per_100": 0.5,
+    "budget_tier": "essential",
+    "calories_per_100": 18
+  },
+  {
+    "id": "lauki",
+    "name": "Bottle Gourd (Lauki / Ghia)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 4.0,
+    "protein_per_100": 0.6,
+    "carbs_per_100": 3.4,
+    "fats_per_100": 0.1,
+    "fiber_per_100": 1.2,
+    "budget_tier": "essential",
+    "calories_per_100": 17
+  },
+  {
+    "id": "bhindi",
+    "name": "Okra (Bhindi / Ladyfinger)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 6.0,
+    "protein_per_100": 1.9,
+    "carbs_per_100": 7.5,
+    "fats_per_100": 0.2,
+    "fiber_per_100": 3.2,
+    "budget_tier": "essential",
+    "calories_per_100": 39
+  },
+  {
+    "id": "cauliflower",
+    "name": "Cauliflower (Gobi)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 5.0,
+    "protein_per_100": 1.9,
+    "carbs_per_100": 5.0,
+    "fats_per_100": 0.3,
+    "fiber_per_100": 2.0,
+    "budget_tier": "essential",
+    "calories_per_100": 30
+  },
+  {
+    "id": "green_peas",
+    "name": "Green Peas (Matar)",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 8.0,
+    "protein_per_100": 5.4,
+    "carbs_per_100": 14.5,
+    "fats_per_100": 0.4,
+    "fiber_per_100": 5.7,
+    "budget_tier": "essential",
+    "calories_per_100": 83
+  },
+  {
+    "id": "mushrooms",
+    "name": "Button Mushrooms",
+    "category": "vegetable",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 18.0,
+    "protein_per_100": 3.1,
+    "carbs_per_100": 3.3,
+    "fats_per_100": 0.3,
+    "fiber_per_100": 1.0,
+    "budget_tier": "mid",
+    "calories_per_100": 28
+  },
+  {
+    "id": "banana",
+    "name": "Banana (Kela)",
+    "category": "fruit",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 6.0,
+    "protein_per_100": 1.3,
+    "carbs_per_100": 27.0,
+    "fats_per_100": 0.3,
+    "fiber_per_100": 3.1,
+    "budget_tier": "essential",
+    "calories_per_100": 116
+  },
+  {
+    "id": "apple",
+    "name": "Apple (Seb)",
+    "category": "fruit",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 25.0,
+    "protein_per_100": 0.5,
+    "carbs_per_100": 25.0,
+    "fats_per_100": 0.3,
+    "fiber_per_100": 4.4,
+    "budget_tier": "mid",
+    "calories_per_100": 105
+  },
+  {
+    "id": "papaya",
+    "name": "Fresh Papaya (Papita)",
+    "category": "fruit",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 6.0,
+    "protein_per_100": 0.5,
+    "carbs_per_100": 11.0,
+    "fats_per_100": 0.1,
+    "fiber_per_100": 1.7,
+    "budget_tier": "essential",
+    "calories_per_100": 47
+  },
+  {
+    "id": "guava",
+    "name": "Guava (Amrood)",
+    "category": "fruit",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 10.0,
+    "protein_per_100": 2.6,
+    "carbs_per_100": 14.0,
+    "fats_per_100": 1.0,
+    "fiber_per_100": 5.4,
+    "budget_tier": "essential",
+    "calories_per_100": 75
+  },
+  {
+    "id": "pomegranate",
+    "name": "Pomegranate (Anaar)",
+    "category": "fruit",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 30.0,
+    "protein_per_100": 1.7,
+    "carbs_per_100": 19.0,
+    "fats_per_100": 1.2,
+    "fiber_per_100": 4.0,
+    "budget_tier": "premium",
+    "calories_per_100": 94
+  },
+  {
+    "id": "orange",
+    "name": "Orange / Santra",
+    "category": "fruit",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "piece",
+    "price_per_100g_or_unit_inr": 12.0,
+    "protein_per_100": 1.2,
+    "carbs_per_100": 15.0,
+    "fats_per_100": 0.2,
+    "fiber_per_100": 3.1,
+    "budget_tier": "mid",
+    "calories_per_100": 67
+  },
+  {
+    "id": "milk",
+    "name": "Toned Cow Milk",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "ml",
+    "price_per_100g_or_unit_inr": 6.0,
+    "protein_per_100": 3.3,
+    "carbs_per_100": 4.8,
+    "fats_per_100": 3.0,
+    "fiber_per_100": 0.0,
+    "budget_tier": "essential",
+    "calories_per_100": 59
+  },
+  {
+    "id": "curd",
+    "name": "Plain Curd / Dahi",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 7.0,
+    "protein_per_100": 3.5,
+    "carbs_per_100": 4.0,
+    "fats_per_100": 3.0,
+    "fiber_per_100": 0.0,
+    "budget_tier": "essential",
+    "calories_per_100": 57
+  },
+  {
+    "id": "hung_curd",
+    "name": "Hung Curd / Greek Style Yogurt",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 20.0,
+    "protein_per_100": 10.0,
+    "carbs_per_100": 3.6,
+    "fats_per_100": 0.4,
+    "fiber_per_100": 0.0,
+    "budget_tier": "premium",
+    "calories_per_100": 58
+  },
+  {
+    "id": "peanuts",
+    "name": "Roasted Peanuts (Moongphali)",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 18.0,
+    "protein_per_100": 25.8,
+    "carbs_per_100": 16.1,
+    "fats_per_100": 49.2,
+    "fiber_per_100": 8.5,
+    "budget_tier": "essential",
+    "calories_per_100": 610
+  },
+  {
+    "id": "peanut_butter",
+    "name": "Natural Peanut Butter",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 35.0,
+    "protein_per_100": 25.0,
+    "carbs_per_100": 20.0,
+    "fats_per_100": 50.0,
+    "fiber_per_100": 6.0,
+    "budget_tier": "mid",
+    "calories_per_100": 630
+  },
+  {
+    "id": "mustard_oil",
+    "name": "Mustard / Cooking Oil",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "ml",
+    "price_per_100g_or_unit_inr": 18.0,
+    "protein_per_100": 0.0,
+    "carbs_per_100": 0.0,
+    "fats_per_100": 100.0,
+    "fiber_per_100": 0.0,
+    "budget_tier": "essential",
+    "calories_per_100": 900
+  },
+  {
+    "id": "ghee",
+    "name": "Desi Cow Ghee",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 65.0,
+    "protein_per_100": 0.0,
+    "carbs_per_100": 0.0,
+    "fats_per_100": 99.5,
+    "fiber_per_100": 0.0,
+    "budget_tier": "mid",
+    "calories_per_100": 896
+  },
+  {
+    "id": "spices_basic",
+    "name": "Indian Spices (Salt, Haldi, Jeera, Mirch)",
+    "category": "dairy_fat",
+    "diet_tags": [
+      "veg"
+    ],
+    "unit": "g",
+    "price_per_100g_or_unit_inr": 2.0,
+    "protein_per_100": 0.0,
+    "carbs_per_100": 0.0,
+    "fats_per_100": 0.0,
+    "fiber_per_100": 0.0,
+    "budget_tier": "essential",
+    "calories_per_100": 0
+  }
+]

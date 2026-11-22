@@ -1,0 +1,1789 @@
+[
+  {
+    "id": "masala_oats_milk",
+    "name": "Masala Oats with Warm Milk",
+    "slot": "breakfast",
+    "diet_type": "veg",
+    "prep_time_mins": 10,
+    "ingredients": [
+      {
+        "food_id": "oats_rolled",
+        "amount": 60
+      },
+      {
+        "food_id": "milk",
+        "amount": 200
+      },
+      {
+        "food_id": "onion",
+        "amount": 30
+      },
+      {
+        "food_id": "tomato",
+        "amount": 30
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Dry roast oats in a pan for 2 minutes.",
+      "Add chopped onions, tomatoes, salt and turmeric with 150ml water.",
+      "Simmer for 4-5 minutes until thick.",
+      "Serve hot alongside 200ml warmed toned milk."
+    ],
+    "protein_g": 15.3,
+    "carbs_g": 53.2,
+    "fats_g": 10.3,
+    "fiber_g": 6.9,
+    "calories": 367,
+    "cost_inr": 25.3,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Masala+Oats+with+Warm+Milk+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Masala+Oats+with+Warm+Milk+easy+step+by+step+recipe"
+  },
+  {
+    "id": "boiled_eggs_banana_shake",
+    "name": "Boiled Eggs & Banana Milk Shake",
+    "slot": "breakfast",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 12,
+    "ingredients": [
+      {
+        "food_id": "eggs",
+        "amount": 3
+      },
+      {
+        "food_id": "banana",
+        "amount": 1
+      },
+      {
+        "food_id": "milk",
+        "amount": 200
+      }
+    ],
+    "recipe_steps": [
+      "Boil 3 whole eggs for 9-10 minutes, cool in cold water and peel.",
+      "Blend 1 ripe banana with 200ml chilled toned milk until smooth.",
+      "Season eggs with black pepper and pinch of salt, serve together."
+    ],
+    "protein_g": 26.8,
+    "carbs_g": 37.8,
+    "fats_g": 21.3,
+    "fiber_g": 3.1,
+    "calories": 450,
+    "cost_inr": 39.0,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Boiled+Eggs+%26+Banana+Milk+Shake+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Boiled+Eggs+%26+Banana+Milk+Shake+easy+step+by+step+recipe"
+  },
+  {
+    "id": "egg_bhurji_roti",
+    "name": "High-Protein Egg Bhurji with Wheat Roti",
+    "slot": "breakfast",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 15,
+    "ingredients": [
+      {
+        "food_id": "eggs",
+        "amount": 3
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 60
+      },
+      {
+        "food_id": "onion",
+        "amount": 50
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Knead wheat flour with water and roll into 2 soft rotis on a hot tawa.",
+      "Heat 5ml mustard oil, saute diced onions, tomatoes, and basic spices.",
+      "Crack 3 whole eggs into the pan and scramble on medium flame until cooked.",
+      "Serve hot with freshly cooked rotis."
+    ],
+    "protein_g": 27.1,
+    "carbs_g": 51.0,
+    "fats_g": 21.2,
+    "fiber_g": 8.0,
+    "calories": 503,
+    "cost_inr": 28.7,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=High-Protein+Egg+Bhurji+with+Wheat+Roti+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=High-Protein+Egg+Bhurji+with+Wheat+Roti+easy+step+by+step+recipe"
+  },
+  {
+    "id": "besan_chilla_curd",
+    "name": "Savory Besan Chilla with Fresh Curd",
+    "slot": "breakfast",
+    "diet_type": "veg",
+    "prep_time_mins": 15,
+    "ingredients": [
+      {
+        "food_id": "besan",
+        "amount": 70
+      },
+      {
+        "food_id": "curd",
+        "amount": 100
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "tomato",
+        "amount": 40
+      },
+      {
+        "food_id": "spinach",
+        "amount": 30
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Whisk besan with water, spices, chopped onions, tomatoes, and shredded spinach into a pourable batter.",
+      "Grease a hot pan with 5ml mustard oil and pour batter to make 2 crisp chillas.",
+      "Flip and cook both sides until golden brown.",
+      "Serve warm with 100g fresh curd."
+    ],
+    "protein_g": 20.6,
+    "carbs_g": 51.0,
+    "fats_g": 12.1,
+    "fiber_g": 8.8,
+    "calories": 395,
+    "cost_inr": 19.4,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Savory+Besan+Chilla+with+Fresh+Curd+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Savory+Besan+Chilla+with+Fresh+Curd+easy+step+by+step+recipe"
+  },
+  {
+    "id": "paneer_bhurji_toast",
+    "name": "Spiced Paneer Bhurji with Whole Wheat Toast",
+    "slot": "breakfast",
+    "diet_type": "veg",
+    "prep_time_mins": 12,
+    "ingredients": [
+      {
+        "food_id": "paneer",
+        "amount": 100
+      },
+      {
+        "food_id": "bread_wheat",
+        "amount": 2
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "tomato",
+        "amount": 40
+      },
+      {
+        "food_id": "capsicum",
+        "amount": 30
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Crumble fresh paneer by hand.",
+      "Heat oil in a pan, saute diced onions, tomatoes, and capsicum with turmeric and jeera.",
+      "Add crumbled paneer, cook gently for 3-4 minutes so it remains juicy.",
+      "Toast 2 wheat bread slices and serve together."
+    ],
+    "protein_g": 26.2,
+    "carbs_g": 38.7,
+    "fats_g": 27.2,
+    "fiber_g": 5.7,
+    "calories": 504,
+    "cost_inr": 38.6,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Spiced+Paneer+Bhurji+with+Whole+Wheat+Toast+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Spiced+Paneer+Bhurji+with+Whole+Wheat+Toast+easy+step+by+step+recipe"
+  },
+  {
+    "id": "poha_peanuts_boiled_eggs",
+    "name": "Classic Kanda Poha with Peanuts & Boiled Eggs",
+    "slot": "breakfast",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 15,
+    "ingredients": [
+      {
+        "food_id": "poha",
+        "amount": 60
+      },
+      {
+        "food_id": "peanuts",
+        "amount": 20
+      },
+      {
+        "food_id": "eggs",
+        "amount": 2
+      },
+      {
+        "food_id": "onion",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Rinse poha in a colander and drain completely.",
+      "Heat mustard oil, fry peanuts until crunchy, then add chopped onions and turmeric.",
+      "Add drained poha and salt, toss gently on low heat for 3 minutes.",
+      "Serve with 2 hard-boiled whole eggs."
+    ],
+    "protein_g": 22.5,
+    "carbs_g": 54.9,
+    "fats_g": 25.5,
+    "fiber_g": 3.8,
+    "calories": 539,
+    "cost_inr": 24.8,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Classic+Kanda+Poha+with+Peanuts+%26+Boiled+Eggs+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Classic+Kanda+Poha+with+Peanuts+%26+Boiled+Eggs+easy+step+by+step+recipe"
+  },
+  {
+    "id": "banana_peanut_butter_oats",
+    "name": "Banana Peanut Butter Protein Oats",
+    "slot": "breakfast",
+    "diet_type": "veg",
+    "prep_time_mins": 8,
+    "ingredients": [
+      {
+        "food_id": "oats_rolled",
+        "amount": 60
+      },
+      {
+        "food_id": "milk",
+        "amount": 200
+      },
+      {
+        "food_id": "peanut_butter",
+        "amount": 20
+      },
+      {
+        "food_id": "banana",
+        "amount": 1
+      }
+    ],
+    "recipe_steps": [
+      "Cook rolled oats in 200ml milk on medium flame for 5 minutes.",
+      "Turn off heat and stir in 20g natural peanut butter.",
+      "Top with 1 sliced banana and serve warm."
+    ],
+    "protein_g": 21.0,
+    "carbs_g": 80.2,
+    "fats_g": 20.5,
+    "fiber_g": 10.3,
+    "calories": 589,
+    "cost_inr": 35.8,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Banana+Peanut+Butter+Protein+Oats+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Banana+Peanut+Butter+Protein+Oats+easy+step+by+step+recipe"
+  },
+  {
+    "id": "egg_omelette_toast_fruit",
+    "name": "Fluffy 3-Egg Omelette with Toast & Orange",
+    "slot": "breakfast",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 12,
+    "ingredients": [
+      {
+        "food_id": "eggs",
+        "amount": 3
+      },
+      {
+        "food_id": "bread_wheat",
+        "amount": 2
+      },
+      {
+        "food_id": "onion",
+        "amount": 30
+      },
+      {
+        "food_id": "tomato",
+        "amount": 30
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "orange",
+        "amount": 1
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Whisk 3 eggs with diced onions, tomatoes, salt, and black pepper.",
+      "Heat 5ml mustard oil in a non-stick pan, pour egg mix, and cook both sides until golden.",
+      "Serve with 2 toasted wheat bread slices and 1 fresh orange."
+    ],
+    "protein_g": 27.7,
+    "carbs_g": 48.2,
+    "fats_g": 22.3,
+    "fiber_g": 8.0,
+    "calories": 504,
+    "cost_inr": 43.4,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Fluffy+3-Egg+Omelette+with+Toast+%26+Orange+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Fluffy+3-Egg+Omelette+with+Toast+%26+Orange+easy+step+by+step+recipe"
+  },
+  {
+    "id": "suji_upma_boiled_eggs",
+    "name": "Vegetable Suji Upma with Boiled Eggs",
+    "slot": "breakfast",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 15,
+    "ingredients": [
+      {
+        "food_id": "suji_semolina",
+        "amount": 60
+      },
+      {
+        "food_id": "eggs",
+        "amount": 2
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "carrot",
+        "amount": 40
+      },
+      {
+        "food_id": "peanuts",
+        "amount": 15
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Dry roast semolina until fragrant.",
+      "Heat oil, saute peanuts, onions, carrots, and mustard seeds.",
+      "Add 150ml boiling water, lower flame, and stir in roasted suji continuously without lumps.",
+      "Serve with 2 boiled eggs on the side."
+    ],
+    "protein_g": 24.5,
+    "carbs_g": 54.6,
+    "fats_g": 23.1,
+    "fiber_g": 5.5,
+    "calories": 524,
+    "cost_inr": 24.9,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Vegetable+Suji+Upma+with+Boiled+Eggs+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Vegetable+Suji+Upma+with+Boiled+Eggs+easy+step+by+step+recipe"
+  },
+  {
+    "id": "whey_oats_banana_bowl",
+    "name": "Whey Protein Oats Bowl with Banana",
+    "slot": "breakfast",
+    "diet_type": "veg",
+    "prep_time_mins": 5,
+    "ingredients": [
+      {
+        "food_id": "oats_rolled",
+        "amount": 50
+      },
+      {
+        "food_id": "whey_protein",
+        "amount": 1
+      },
+      {
+        "food_id": "milk",
+        "amount": 150
+      },
+      {
+        "food_id": "banana",
+        "amount": 1
+      }
+    ],
+    "recipe_steps": [
+      "Microwave or cook oats in 150ml milk for 3 minutes.",
+      "Let cool for 1 minute, then fold in 1 scoop of whey protein until smooth.",
+      "Top with fresh banana slices."
+    ],
+    "protein_g": 37.0,
+    "carbs_g": 70.2,
+    "fats_g": 9.8,
+    "fiber_g": 8.6,
+    "calories": 517,
+    "cost_inr": 104.0,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Whey+Protein+Oats+Bowl+with+Banana+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Whey+Protein+Oats+Bowl+with+Banana+easy+step+by+step+recipe"
+  },
+  {
+    "id": "soya_pulao_curd",
+    "name": "High-Protein Soya Chunk Pulao with Curd",
+    "slot": "lunch",
+    "diet_type": "veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "soya_chunks",
+        "amount": 60
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 75
+      },
+      {
+        "food_id": "curd",
+        "amount": 150
+      },
+      {
+        "food_id": "onion",
+        "amount": 50
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Boil soya chunks in salted water for 5 minutes, rinse thoroughly, and squeeze out excess moisture.",
+      "Heat 6ml mustard oil, saute onions, tomatoes, and garam masala.",
+      "Add soya chunks, washed rice, and 180ml water; cook in pressure cooker for 2 whistles.",
+      "Serve hot with 150g chilled plain curd."
+    ],
+    "protein_g": 42.7,
+    "carbs_g": 90.9,
+    "fats_g": 11.4,
+    "fiber_g": 10.2,
+    "calories": 637,
+    "cost_inr": 27.98,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=High-Protein+Soya+Chunk+Pulao+with+Curd+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=High-Protein+Soya+Chunk+Pulao+with+Curd+easy+step+by+step+recipe"
+  },
+  {
+    "id": "dal_tadka_rice_salad",
+    "name": "Yellow Dal Tadka, Steamed Rice & Cucumber Salad",
+    "slot": "lunch",
+    "diet_type": "veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "moong_dal",
+        "amount": 70
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 75
+      },
+      {
+        "food_id": "cucumber",
+        "amount": 100
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Pressure cook moong dal with turmeric and salt until tender.",
+      "Prepare tadka with 5ml mustard oil, jeera, chopped onions, and tomatoes, then pour over dal.",
+      "Steam rice with double volume of water.",
+      "Slice cucumber and season with lemon and salt for salad."
+    ],
+    "protein_g": 23.6,
+    "carbs_g": 109.8,
+    "fats_g": 6.5,
+    "fiber_g": 14.0,
+    "calories": 592,
+    "cost_inr": 23.6,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Yellow+Dal+Tadka%2C+Steamed+Rice+%26+Cucumber+Salad+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Yellow+Dal+Tadka%2C+Steamed+Rice+%26+Cucumber+Salad+easy+step+by+step+recipe"
+  },
+  {
+    "id": "chicken_breast_rice_stirfry",
+    "name": "Pan-Seared Chicken Breast with Rice & Stir-Fry Veggies",
+    "slot": "lunch",
+    "diet_type": "non_veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "chicken_breast",
+        "amount": 160
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 70
+      },
+      {
+        "food_id": "broccoli",
+        "amount": 80
+      },
+      {
+        "food_id": "carrot",
+        "amount": 60
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Season chicken breast with black pepper, salt, and a dash of turmeric.",
+      "Pan-sear chicken in 4ml hot oil for 6-7 minutes on each side until cooked through and juicy.",
+      "In the same pan, toss broccoli florets and sliced carrots with 2ml oil on high heat for 3 minutes.",
+      "Serve alongside freshly steamed white rice."
+    ],
+    "protein_g": 57.3,
+    "carbs_g": 65.6,
+    "fats_g": 12.6,
+    "fiber_g": 4.7,
+    "calories": 605,
+    "cost_inr": 59.58,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Pan-Seared+Chicken+Breast+with+Rice+%26+Stir-Fry+Veggies+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Pan-Seared+Chicken+Breast+with+Rice+%26+Stir-Fry+Veggies+easy+step+by+step+recipe"
+  },
+  {
+    "id": "rajma_masala_rice_curd",
+    "name": "Punjabi Rajma Masala with Steamed Rice & Curd",
+    "slot": "lunch",
+    "diet_type": "veg",
+    "prep_time_mins": 35,
+    "ingredients": [
+      {
+        "food_id": "rajma",
+        "amount": 70
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 70
+      },
+      {
+        "food_id": "curd",
+        "amount": 100
+      },
+      {
+        "food_id": "onion",
+        "amount": 60
+      },
+      {
+        "food_id": "tomato",
+        "amount": 60
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Soak rajma overnight and pressure cook until completely soft.",
+      "In 6ml oil, saute finely chopped onions and tomatoes with ginger-garlic and spices until oil separates.",
+      "Add cooked rajma and simmer on low flame for 12 minutes to thicken gravy.",
+      "Serve hot with steamed rice and 100g curd."
+    ],
+    "protein_g": 25.0,
+    "carbs_g": 108.5,
+    "fats_g": 10.3,
+    "fiber_g": 13.2,
+    "calories": 627,
+    "cost_inr": 27.68,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Punjabi+Rajma+Masala+with+Steamed+Rice+%26+Curd+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Punjabi+Rajma+Masala+with+Steamed+Rice+%26+Curd+easy+step+by+step+recipe"
+  },
+  {
+    "id": "chole_rice_cucumber",
+    "name": "Kabuli Chole Masala with Steamed Rice & Cucumber",
+    "slot": "lunch",
+    "diet_type": "veg",
+    "prep_time_mins": 30,
+    "ingredients": [
+      {
+        "food_id": "chickpeas_kabuli",
+        "amount": 70
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 70
+      },
+      {
+        "food_id": "cucumber",
+        "amount": 80
+      },
+      {
+        "food_id": "onion",
+        "amount": 50
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Boil soaked chickpeas until tender.",
+      "Saute onions, tomatoes, and chole spices in 6ml oil.",
+      "Add boiled chana with cooking broth and simmer for 10 minutes.",
+      "Plate with hot steamed rice and sliced cucumber."
+    ],
+    "protein_g": 19.8,
+    "carbs_g": 106.8,
+    "fats_g": 10.8,
+    "fiber_g": 14.7,
+    "calories": 604,
+    "cost_inr": 22.38,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Kabuli+Chole+Masala+with+Steamed+Rice+%26+Cucumber+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Kabuli+Chole+Masala+with+Steamed+Rice+%26+Cucumber+easy+step+by+step+recipe"
+  },
+  {
+    "id": "kala_chana_curry_roti",
+    "name": "Kala Chana Gravy Curry with 3 Wheat Rotis",
+    "slot": "lunch",
+    "diet_type": "veg",
+    "prep_time_mins": 30,
+    "ingredients": [
+      {
+        "food_id": "chana_black",
+        "amount": 70
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 75
+      },
+      {
+        "food_id": "onion",
+        "amount": 50
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Boil brown chana with salt in a pressure cooker.",
+      "Prepare onion-tomato gravy with Indian spices in 5ml mustard oil.",
+      "Add boiled chana and simmer for 8 minutes.",
+      "Prepare 3 whole wheat rotis and serve hot."
+    ],
+    "protein_g": 24.0,
+    "carbs_g": 102.6,
+    "fats_g": 9.9,
+    "fiber_g": 21.6,
+    "calories": 596,
+    "cost_inr": 16.07,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Kala+Chana+Gravy+Curry+with+3+Wheat+Rotis+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Kala+Chana+Gravy+Curry+with+3+Wheat+Rotis+easy+step+by+step+recipe"
+  },
+  {
+    "id": "egg_curry_steamed_rice",
+    "name": "Homestyle Egg Curry (3 Eggs) with Steamed Rice",
+    "slot": "lunch",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 20,
+    "ingredients": [
+      {
+        "food_id": "eggs",
+        "amount": 3
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 75
+      },
+      {
+        "food_id": "onion",
+        "amount": 50
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Boil and peel 3 eggs, prick lightly, and sear in 2ml oil with turmeric.",
+      "Saute onions and tomatoes in remaining oil with curry spices until fragrant.",
+      "Add 150ml water, simmer eggs in gravy for 6 minutes.",
+      "Serve hot with steamed rice."
+    ],
+    "protein_g": 25.1,
+    "carbs_g": 66.3,
+    "fats_g": 21.6,
+    "fiber_g": 2.4,
+    "calories": 560,
+    "cost_inr": 30.68,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Homestyle+Egg+Curry+%283+Eggs%29+with+Steamed+Rice+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Homestyle+Egg+Curry+%283+Eggs%29+with+Steamed+Rice+easy+step+by+step+recipe"
+  },
+  {
+    "id": "paneer_matar_roti",
+    "name": "Matar Paneer with Whole Wheat Rotis",
+    "slot": "lunch",
+    "diet_type": "veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "paneer",
+        "amount": 100
+      },
+      {
+        "food_id": "green_peas",
+        "amount": 60
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 70
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Saute onions and tomato puree with garam masala in 5ml oil.",
+      "Add green peas and 100ml water, cook until peas are tender.",
+      "Add paneer cubes and simmer on low flame for 4 minutes.",
+      "Serve with freshly puffed whole wheat rotis."
+    ],
+    "protein_g": 30.5,
+    "carbs_g": 68.8,
+    "fats_g": 26.6,
+    "fiber_g": 12.4,
+    "calories": 637,
+    "cost_inr": 37.55,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Matar+Paneer+with+Whole+Wheat+Rotis+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Matar+Paneer+with+Whole+Wheat+Rotis+easy+step+by+step+recipe"
+  },
+  {
+    "id": "chicken_curry_roti",
+    "name": "Rustic Chicken Curry with Wheat Roti",
+    "slot": "lunch",
+    "diet_type": "non_veg",
+    "prep_time_mins": 30,
+    "ingredients": [
+      {
+        "food_id": "chicken_breast",
+        "amount": 160
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 75
+      },
+      {
+        "food_id": "onion",
+        "amount": 60
+      },
+      {
+        "food_id": "tomato",
+        "amount": 60
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Cut chicken breast into curry cubes.",
+      "Saute onions and tomatoes in 6ml mustard oil with coriander, cumin, and chili powder.",
+      "Add chicken pieces, sear for 4 minutes, add 150ml warm water, and simmer covered for 12 minutes.",
+      "Serve with 3 soft wheat rotis."
+    ],
+    "protein_g": 59.8,
+    "carbs_g": 61.9,
+    "fats_g": 13.2,
+    "fiber_g": 10.0,
+    "calories": 606,
+    "cost_inr": 50.95,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Rustic+Chicken+Curry+with+Wheat+Roti+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Rustic+Chicken+Curry+with+Wheat+Roti+easy+step+by+step+recipe"
+  },
+  {
+    "id": "tofu_veggie_fried_rice",
+    "name": "High-Protein Tofu & Mixed Veggie Fried Rice",
+    "slot": "lunch",
+    "diet_type": "veg",
+    "prep_time_mins": 20,
+    "ingredients": [
+      {
+        "food_id": "tofu",
+        "amount": 130
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 70
+      },
+      {
+        "food_id": "capsicum",
+        "amount": 50
+      },
+      {
+        "food_id": "carrot",
+        "amount": 50
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Press and cube firm tofu, sear in 3ml oil until golden.",
+      "In same wok, toss sliced onions, carrots, and capsicum with remaining 3ml oil on high heat.",
+      "Add cooked rice, spices, and tossed tofu, stir-fry on high flame for 2 minutes.",
+      "Serve hot."
+    ],
+    "protein_g": 22.0,
+    "carbs_g": 68.0,
+    "fats_g": 13.2,
+    "fiber_g": 5.4,
+    "calories": 479,
+    "cost_inr": 39.48,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=High-Protein+Tofu+%26+Mixed+Veggie+Fried+Rice+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=High-Protein+Tofu+%26+Mixed+Veggie+Fried+Rice+easy+step+by+step+recipe"
+  },
+  {
+    "id": "fish_curry_rice",
+    "name": "Bengali Style Rohu Fish Curry with Steamed Rice",
+    "slot": "lunch",
+    "diet_type": "non_veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "fish_rohu",
+        "amount": 160
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 75
+      },
+      {
+        "food_id": "potato",
+        "amount": 60
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Marinate fish with turmeric and salt, shallow fry lightly in 3ml oil.",
+      "Saute potatoes, tomatoes, and jeera in remaining 3ml mustard oil.",
+      "Add 200ml water, bring to boil, gently slide fish pieces in and simmer for 6 minutes.",
+      "Serve with hot steamed rice."
+    ],
+    "protein_g": 34.1,
+    "carbs_g": 70.7,
+    "fats_g": 9.8,
+    "fiber_g": 2.9,
+    "calories": 507,
+    "cost_inr": 49.78,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Bengali+Style+Rohu+Fish+Curry+with+Steamed+Rice+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Bengali+Style+Rohu+Fish+Curry+with+Steamed+Rice+easy+step+by+step+recipe"
+  },
+  {
+    "id": "roasted_chana_peanuts",
+    "name": "Crispy Roasted Chana & Peanut Mix",
+    "slot": "snack",
+    "diet_type": "veg",
+    "prep_time_mins": 3,
+    "ingredients": [
+      {
+        "food_id": "roasted_chana",
+        "amount": 40
+      },
+      {
+        "food_id": "peanuts",
+        "amount": 25
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 2
+      }
+    ],
+    "recipe_steps": [
+      "Toss roasted chana and peanuts in a bowl.",
+      "Sprinkle chaat masala or black salt and enjoy dry as a crunch snack."
+    ],
+    "protein_g": 15.4,
+    "carbs_g": 27.2,
+    "fats_g": 14.5,
+    "fiber_g": 8.5,
+    "calories": 301,
+    "cost_inr": 10.14,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Crispy+Roasted+Chana+%26+Peanut+Mix+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Crispy+Roasted+Chana+%26+Peanut+Mix+easy+step+by+step+recipe"
+  },
+  {
+    "id": "sprouted_moong_chaat",
+    "name": "Zesty Sprouted Moong Dal Chaat",
+    "slot": "snack",
+    "diet_type": "veg",
+    "prep_time_mins": 8,
+    "ingredients": [
+      {
+        "food_id": "moong_dal",
+        "amount": 45
+      },
+      {
+        "food_id": "onion",
+        "amount": 30
+      },
+      {
+        "food_id": "tomato",
+        "amount": 30
+      },
+      {
+        "food_id": "cucumber",
+        "amount": 40
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 3
+      }
+    ],
+    "recipe_steps": [
+      "Boil or steam sprouted moong dal for 3-4 minutes until tender-crisp.",
+      "Finely dice onions, tomatoes, and cucumber.",
+      "Toss together with lemon juice, black salt, and roasted cumin powder.",
+      "Serve fresh."
+    ],
+    "protein_g": 11.7,
+    "carbs_g": 32.4,
+    "fats_g": 0.7,
+    "fiber_g": 8.3,
+    "calories": 183,
+    "cost_inr": 10.81,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Zesty+Sprouted+Moong+Dal+Chaat+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Zesty+Sprouted+Moong+Dal+Chaat+easy+step+by+step+recipe"
+  },
+  {
+    "id": "boiled_eggs_pepper",
+    "name": "Hard-Boiled Eggs with Rock Salt & Pepper",
+    "slot": "snack",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 10,
+    "ingredients": [
+      {
+        "food_id": "eggs",
+        "amount": 3
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 2
+      }
+    ],
+    "recipe_steps": [
+      "Boil 3 eggs for 10 minutes in rolling water.",
+      "Cool, peel, cut in halves and sprinkle crushed black pepper and rock salt."
+    ],
+    "protein_g": 18.9,
+    "carbs_g": 1.2,
+    "fats_g": 15.0,
+    "fiber_g": 0.0,
+    "calories": 215,
+    "cost_inr": 21.04,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Hard-Boiled+Eggs+with+Rock+Salt+%26+Pepper+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Hard-Boiled+Eggs+with+Rock+Salt+%26+Pepper+easy+step+by+step+recipe"
+  },
+  {
+    "id": "egg_white_spinach_scramble",
+    "name": "Egg Whites & Baby Spinach Scramble",
+    "slot": "snack",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 8,
+    "ingredients": [
+      {
+        "food_id": "egg_whites",
+        "amount": 4
+      },
+      {
+        "food_id": "spinach",
+        "amount": 60
+      },
+      {
+        "food_id": "onion",
+        "amount": 30
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 3
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 3
+      }
+    ],
+    "recipe_steps": [
+      "Heat 3ml oil, wilt chopped spinach and onions for 2 minutes.",
+      "Pour in 4 egg whites seasoned with salt and pepper.",
+      "Scramble gently until soft curds form, serve immediately."
+    ],
+    "protein_g": 16.5,
+    "carbs_g": 5.8,
+    "fats_g": 3.7,
+    "fiber_g": 1.8,
+    "calories": 122,
+    "cost_inr": 24.2,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Egg+Whites+%26+Baby+Spinach+Scramble+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Egg+Whites+%26+Baby+Spinach+Scramble+easy+step+by+step+recipe"
+  },
+  {
+    "id": "hung_curd_fruit_bowl",
+    "name": "High-Protein Hung Curd & Fresh Fruit Bowl",
+    "slot": "snack",
+    "diet_type": "veg",
+    "prep_time_mins": 5,
+    "ingredients": [
+      {
+        "food_id": "hung_curd",
+        "amount": 120
+      },
+      {
+        "food_id": "banana",
+        "amount": 1
+      },
+      {
+        "food_id": "apple",
+        "amount": 1
+      }
+    ],
+    "recipe_steps": [
+      "Whisk hung curd in a dessert bowl until creamy.",
+      "Chop fresh banana and apple into bite-sized pieces.",
+      "Layer fruit over hung curd and serve chilled."
+    ],
+    "protein_g": 13.8,
+    "carbs_g": 56.3,
+    "fats_g": 1.1,
+    "fiber_g": 7.5,
+    "calories": 290,
+    "cost_inr": 55.0,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=High-Protein+Hung+Curd+%26+Fresh+Fruit+Bowl+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=High-Protein+Hung+Curd+%26+Fresh+Fruit+Bowl+easy+step+by+step+recipe"
+  },
+  {
+    "id": "peanut_butter_toast_banana",
+    "name": "Wheat Toast with Peanut Butter & Banana Slices",
+    "slot": "snack",
+    "diet_type": "veg",
+    "prep_time_mins": 4,
+    "ingredients": [
+      {
+        "food_id": "bread_wheat",
+        "amount": 2
+      },
+      {
+        "food_id": "peanut_butter",
+        "amount": 25
+      },
+      {
+        "food_id": "banana",
+        "amount": 1
+      }
+    ],
+    "recipe_steps": [
+      "Toast 2 slices of whole wheat bread until crisp.",
+      "Spread 25g natural peanut butter evenly across both slices.",
+      "Top with sliced banana and serve."
+    ],
+    "protein_g": 14.6,
+    "carbs_g": 60.0,
+    "fats_g": 14.8,
+    "fiber_g": 8.6,
+    "calories": 432,
+    "cost_inr": 21.75,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Wheat+Toast+with+Peanut+Butter+%26+Banana+Slices+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Wheat+Toast+with+Peanut+Butter+%26+Banana+Slices+easy+step+by+step+recipe"
+  },
+  {
+    "id": "roasted_soya_chaat",
+    "name": "Crunchy Pan-Roasted Soya Chunks Chaat",
+    "slot": "snack",
+    "diet_type": "veg",
+    "prep_time_mins": 10,
+    "ingredients": [
+      {
+        "food_id": "soya_chunks",
+        "amount": 40
+      },
+      {
+        "food_id": "onion",
+        "amount": 30
+      },
+      {
+        "food_id": "tomato",
+        "amount": 30
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 4
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 4
+      }
+    ],
+    "recipe_steps": [
+      "Soak soya chunks in hot water, squeeze dry, and cut into bite-sized pieces.",
+      "Toss in 4ml hot oil with chaat masala until crispy on the edges.",
+      "Mix in raw diced onions, tomatoes, and lemon juice."
+    ],
+    "protein_g": 21.4,
+    "carbs_g": 17.2,
+    "fats_g": 4.3,
+    "fiber_g": 6.1,
+    "calories": 193,
+    "cost_inr": 8.4,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Crunchy+Pan-Roasted+Soya+Chunks+Chaat+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Crunchy+Pan-Roasted+Soya+Chunks+Chaat+easy+step+by+step+recipe"
+  },
+  {
+    "id": "sweet_potato_boiled_chaat",
+    "name": "Steamed Sweet Potato Chaat with Lemon",
+    "slot": "snack",
+    "diet_type": "veg",
+    "prep_time_mins": 12,
+    "ingredients": [
+      {
+        "food_id": "sweet_potato",
+        "amount": 160
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 3
+      }
+    ],
+    "recipe_steps": [
+      "Boil or steam sweet potato until fork-tender.",
+      "Peel skin and cut into rounds.",
+      "Sprinkle roasted jeera powder, black salt, and squeeze fresh lemon juice."
+    ],
+    "protein_g": 2.6,
+    "carbs_g": 32.0,
+    "fats_g": 0.2,
+    "fiber_g": 4.8,
+    "calories": 140,
+    "cost_inr": 9.66,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Steamed+Sweet+Potato+Chaat+with+Lemon+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Steamed+Sweet+Potato+Chaat+with+Lemon+easy+step+by+step+recipe"
+  },
+  {
+    "id": "guava_roasted_chana",
+    "name": "Fresh Guava Slices & Roasted Chana",
+    "slot": "snack",
+    "diet_type": "veg",
+    "prep_time_mins": 3,
+    "ingredients": [
+      {
+        "food_id": "guava",
+        "amount": 1
+      },
+      {
+        "food_id": "roasted_chana",
+        "amount": 35
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 2
+      }
+    ],
+    "recipe_steps": [
+      "Wash and slice 1 fresh guava, sprinkle chaat masala.",
+      "Serve with 35g crunchy roasted chana on the side."
+    ],
+    "protein_g": 10.5,
+    "carbs_g": 34.3,
+    "fats_g": 2.9,
+    "fiber_g": 11.0,
+    "calories": 205,
+    "cost_inr": 14.94,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Fresh+Guava+Slices+%26+Roasted+Chana+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Fresh+Guava+Slices+%26+Roasted+Chana+easy+step+by+step+recipe"
+  },
+  {
+    "id": "palak_paneer_roti",
+    "name": "Nutritious Palak Paneer with Whole Wheat Roti",
+    "slot": "dinner",
+    "diet_type": "veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "paneer",
+        "amount": 100
+      },
+      {
+        "food_id": "spinach",
+        "amount": 150
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 70
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "tomato",
+        "amount": 40
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Blanch spinach leaves in boiling water for 2 minutes, then puree.",
+      "Heat 5ml oil, saute onions, tomatoes, and garlic paste.",
+      "Pour in spinach puree, simmer 4 minutes, then drop in fresh paneer cubes.",
+      "Serve hot with 2-3 freshly puffed whole wheat rotis."
+    ],
+    "protein_g": 31.6,
+    "carbs_g": 65.1,
+    "fats_g": 26.9,
+    "fiber_g": 12.2,
+    "calories": 629,
+    "cost_inr": 38.35,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Nutritious+Palak+Paneer+with+Whole+Wheat+Roti+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Nutritious+Palak+Paneer+with+Whole+Wheat+Roti+easy+step+by+step+recipe"
+  },
+  {
+    "id": "soya_curry_roti",
+    "name": "Spiced Soya Chunks Curry with 3 Wheat Rotis",
+    "slot": "dinner",
+    "diet_type": "veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "soya_chunks",
+        "amount": 60
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 75
+      },
+      {
+        "food_id": "onion",
+        "amount": 50
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "potato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Hydrate soya chunks in hot water, rinse, and squeeze dry.",
+      "Saute diced onions, tomatoes, and potatoes with curry spices in 6ml oil.",
+      "Add soya chunks with 150ml water and simmer until potato is cooked and gravy is thick.",
+      "Serve with 3 soft wheat rotis."
+    ],
+    "protein_g": 42.2,
+    "carbs_g": 88.9,
+    "fats_g": 7.8,
+    "fiber_g": 18.6,
+    "calories": 595,
+    "cost_inr": 18.11,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Spiced+Soya+Chunks+Curry+with+3+Wheat+Rotis+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Spiced+Soya+Chunks+Curry+with+3+Wheat+Rotis+easy+step+by+step+recipe"
+  },
+  {
+    "id": "toor_dal_rice_bhindi",
+    "name": "Toor Dal, Steamed Rice & Crisp Bhindi Fry",
+    "slot": "dinner",
+    "diet_type": "veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "toor_dal",
+        "amount": 65
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 70
+      },
+      {
+        "food_id": "bhindi",
+        "amount": 100
+      },
+      {
+        "food_id": "onion",
+        "amount": 30
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 6
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Cook toor dal with haldi and salt in pressure cooker; temper with cumin and mustard seeds in 2ml oil.",
+      "Chop bhindi and saute in 4ml hot oil with onions, amchur, and chili powder until crisp.",
+      "Serve alongside steamed white rice."
+    ],
+    "protein_g": 21.4,
+    "carbs_g": 105.2,
+    "fats_g": 7.6,
+    "fiber_g": 14.4,
+    "calories": 575,
+    "cost_inr": 22.98,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Toor+Dal%2C+Steamed+Rice+%26+Crisp+Bhindi+Fry+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Toor+Dal%2C+Steamed+Rice+%26+Crisp+Bhindi+Fry+easy+step+by+step+recipe"
+  },
+  {
+    "id": "chicken_breast_roti_salad",
+    "name": "Grilled Chicken Breast, Whole Wheat Roti & Salad",
+    "slot": "dinner",
+    "diet_type": "non_veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "chicken_breast",
+        "amount": 160
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 70
+      },
+      {
+        "food_id": "cucumber",
+        "amount": 80
+      },
+      {
+        "food_id": "tomato",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Marinate chicken with garlic, chili powder, salt, and 3ml oil.",
+      "Grill or pan-sear on medium-high heat for 6-7 minutes per side.",
+      "Make 2 whole wheat rotis on a tawa.",
+      "Toss cucumber and tomatoes with black salt for a crisp side salad."
+    ],
+    "protein_g": 59.0,
+    "carbs_g": 55.2,
+    "fats_g": 12.1,
+    "fiber_g": 8.7,
+    "calories": 566,
+    "cost_inr": 50.95,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Grilled+Chicken+Breast%2C+Whole+Wheat+Roti+%26+Salad+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Grilled+Chicken+Breast%2C+Whole+Wheat+Roti+%26+Salad+easy+step+by+step+recipe"
+  },
+  {
+    "id": "tofu_palak_curry_roti",
+    "name": "Tofu Palak (Vegan Palak Paneer) with Wheat Roti",
+    "slot": "dinner",
+    "diet_type": "veg",
+    "prep_time_mins": 22,
+    "ingredients": [
+      {
+        "food_id": "tofu",
+        "amount": 120
+      },
+      {
+        "food_id": "spinach",
+        "amount": 150
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 70
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Puree blanched spinach leaves.",
+      "Saute chopped onions with spices in 5ml mustard oil, pour in spinach puree.",
+      "Simmer for 4 minutes, add cubed tofu and cook for 3 minutes.",
+      "Serve with whole wheat rotis."
+    ],
+    "protein_g": 27.6,
+    "carbs_g": 61.9,
+    "fats_g": 12.8,
+    "fiber_g": 13.1,
+    "calories": 473,
+    "cost_inr": 35.75,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Tofu+Palak+%28Vegan+Palak+Paneer%29+with+Wheat+Roti+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Tofu+Palak+%28Vegan+Palak+Paneer%29+with+Wheat+Roti+easy+step+by+step+recipe"
+  },
+  {
+    "id": "curd_rice_soya_fry",
+    "name": "Tempered Curd Rice with Crispy Soya Fry",
+    "slot": "dinner",
+    "diet_type": "veg",
+    "prep_time_mins": 20,
+    "ingredients": [
+      {
+        "food_id": "rice_white",
+        "amount": 70
+      },
+      {
+        "food_id": "curd",
+        "amount": 150
+      },
+      {
+        "food_id": "soya_chunks",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Mash cooked rice with fresh curd, season with salt and tempered mustard seeds in 2ml oil.",
+      "Boil, squeeze, and pan-fry soya chunks with red chili and salt in 3ml oil until crunchy.",
+      "Serve the cool curd rice with hot crispy soya on top."
+    ],
+    "protein_g": 36.1,
+    "carbs_g": 77.1,
+    "fats_g": 10.2,
+    "fiber_g": 7.4,
+    "calories": 545,
+    "cost_inr": 22.2,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Tempered+Curd+Rice+with+Crispy+Soya+Fry+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Tempered+Curd+Rice+with+Crispy+Soya+Fry+easy+step+by+step+recipe"
+  },
+  {
+    "id": "paneer_bhurji_roti_salad",
+    "name": "Paneer Bhurji with 3 Wheat Rotis & Kheera Salad",
+    "slot": "dinner",
+    "diet_type": "veg",
+    "prep_time_mins": 20,
+    "ingredients": [
+      {
+        "food_id": "paneer",
+        "amount": 100
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 75
+      },
+      {
+        "food_id": "cucumber",
+        "amount": 80
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "tomato",
+        "amount": 40
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Saute onions and tomatoes in 5ml oil with turmeric and garam masala.",
+      "Add 100g crumbled paneer, stir continuously for 3 minutes.",
+      "Serve with 3 puffed whole wheat rotis and fresh cucumber slices."
+    ],
+    "protein_g": 28.4,
+    "carbs_g": 66.2,
+    "fats_g": 26.5,
+    "fiber_g": 9.8,
+    "calories": 617,
+    "cost_inr": 35.77,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Paneer+Bhurji+with+3+Wheat+Rotis+%26+Kheera+Salad+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Paneer+Bhurji+with+3+Wheat+Rotis+%26+Kheera+Salad+easy+step+by+step+recipe"
+  },
+  {
+    "id": "lauki_chana_dal_roti",
+    "name": "Bottle Gourd & Chana Dal Curry with Wheat Roti",
+    "slot": "dinner",
+    "diet_type": "veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "chana_black",
+        "amount": 60
+      },
+      {
+        "food_id": "lauki",
+        "amount": 150
+      },
+      {
+        "food_id": "wheat_atta",
+        "amount": 70
+      },
+      {
+        "food_id": "tomato",
+        "amount": 40
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Pressure cook soaked chana and peeled cubed lauki with salt and haldi.",
+      "Temper with tomatoes, cumin, and hing in 5ml mustard oil.",
+      "Simmer for 5 minutes until flavors meld, serve with 2-3 rotis."
+    ],
+    "protein_g": 21.7,
+    "carbs_g": 93.1,
+    "fats_g": 9.4,
+    "fiber_g": 20.2,
+    "calories": 544,
+    "cost_inr": 18.35,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Bottle+Gourd+%26+Chana+Dal+Curry+with+Wheat+Roti+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Bottle+Gourd+%26+Chana+Dal+Curry+with+Wheat+Roti+easy+step+by+step+recipe"
+  },
+  {
+    "id": "egg_bhurji_rice_salad",
+    "name": "Spiced Egg Bhurji (3 Eggs) with Steamed Rice & Salad",
+    "slot": "dinner",
+    "diet_type": "eggetarian",
+    "prep_time_mins": 15,
+    "ingredients": [
+      {
+        "food_id": "eggs",
+        "amount": 3
+      },
+      {
+        "food_id": "rice_white",
+        "amount": 75
+      },
+      {
+        "food_id": "cucumber",
+        "amount": 70
+      },
+      {
+        "food_id": "onion",
+        "amount": 40
+      },
+      {
+        "food_id": "tomato",
+        "amount": 40
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Scramble 3 whole eggs with chopped onions, tomatoes, and spices in 5ml oil.",
+      "Serve with freshly steamed white rice and crunchy cucumber salad."
+    ],
+    "protein_g": 25.4,
+    "carbs_g": 67.5,
+    "fats_g": 20.6,
+    "fiber_g": 2.5,
+    "calories": 557,
+    "cost_inr": 32.5,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Spiced+Egg+Bhurji+%283+Eggs%29+with+Steamed+Rice+%26+Salad+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Spiced+Egg+Bhurji+%283+Eggs%29+with+Steamed+Rice+%26+Salad+easy+step+by+step+recipe"
+  },
+  {
+    "id": "chicken_stirfry_sweet_potato",
+    "name": "Chicken Breast & Broccoli Stir-Fry with Sweet Potato",
+    "slot": "dinner",
+    "diet_type": "non_veg",
+    "prep_time_mins": 25,
+    "ingredients": [
+      {
+        "food_id": "chicken_breast",
+        "amount": 160
+      },
+      {
+        "food_id": "sweet_potato",
+        "amount": 150
+      },
+      {
+        "food_id": "broccoli",
+        "amount": 80
+      },
+      {
+        "food_id": "carrot",
+        "amount": 50
+      },
+      {
+        "food_id": "mustard_oil",
+        "amount": 5
+      },
+      {
+        "food_id": "spices_basic",
+        "amount": 5
+      }
+    ],
+    "recipe_steps": [
+      "Boil and cube sweet potatoes.",
+      "Saute chicken breast strips in 5ml oil with garlic and black pepper for 6 minutes.",
+      "Add broccoli florets, carrots, and sweet potato cubes; toss on high heat for 3 minutes.",
+      "Serve warm."
+    ],
+    "protein_g": 54.7,
+    "carbs_g": 40.1,
+    "fats_g": 11.3,
+    "fiber_g": 8.0,
+    "calories": 481,
+    "cost_inr": 63.7,
+    "video_recipe_url": "https://www.youtube.com/results?search_query=Chicken+Breast+%26+Broccoli+Stir-Fry+with+Sweet+Potato+healthy+recipe",
+    "web_recipe_url": "https://www.google.com/search?q=Chicken+Breast+%26+Broccoli+Stir-Fry+with+Sweet+Potato+easy+step+by+step+recipe"
+  }
+]

@@ -1,293 +1,249 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import PantryManager from './components/PantryManager';
-import PlanConfig from './components/PlanConfig';
-import NutritionSummary from './components/NutritionSummary';
-import MealScheduleCard from './components/MealScheduleCard';
-import GroceryDrawer from './components/GroceryDrawer';
-import SettingsModal from './components/SettingsModal';
-import Toast from './components/Toast';
+import OnboardingWizard from './components/OnboardingWizard';
+import DashboardView from './components/DashboardView';
+import MealPlanView from './components/MealPlanView';
+import WorkoutView from './components/WorkoutView';
 
-import { INITIAL_PANTRY_ITEMS } from './data/presetIngredients';
-import { generateMealPlanWithAI } from './services/aiMealService';
+import {
+  fetchFoods,
+  fetchProfile,
+  saveProfile,
+  fetchPantry,
+  savePantry,
+  generateFullPlan,
+  upgradeBudget
+} from './services/api';
+
 import confetti from 'canvas-confetti';
-import { Sparkles, Utensils, ChefHat, RefreshCw } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 
 export default function App() {
-  // 1. LocalStorage state initialization
-  const [pantryItems, setPantryItems] = useState(() => {
-    const saved = localStorage.getItem('smartpantry_items');
-    return saved ? JSON.parse(saved) : INITIAL_PANTRY_ITEMS;
+  const [activeView, setActiveView] = useState('wizard');
+  const [foods, setFoods] = useState([]);
+  const [profile, setProfile] = useState({
+    age: 24,
+    sex: 'male',
+    height_cm: 175.0,
+    weight_kg: 72.0,
+    activity_level: 'moderate',
+    goal: 'lean_bulk',
+    target_weight_kg: 76.0,
+    diet_type: 'veg',
+    body_comp_mode: 'quick',
+    body_fat_pct: null,
+    skeletal_muscle_pct: null,
+    workout_environment: 'without_gym',
+    experience_level: 'beginner',
+    days_per_week: 4,
+    extra_budget_inr: 0.0
   });
 
-  const [duration, setDuration] = useState(1); // 1 or 7
-  const [dietPreference, setDietPreference] = useState('Balanced');
-  const [strictness, setStrictness] = useState('flexible'); // 'strict' or 'flexible'
-  const [targetCalories, setTargetCalories] = useState(2000);
-  const [targetProtein, setTargetProtein] = useState(75);
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('smartpantry_gemini_key') || '');
-
-  const [mealPlan, setMealPlan] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const [bookmarkedMeals, setBookmarkedMeals] = useState(() => {
-    const saved = localStorage.getItem('smartpantry_bookmarks');
-    return saved ? JSON.parse(saved) : [];
+  const [pantry, setPantry] = useState({
+    rice_white: 1000.0,
+    wheat_atta: 1000.0,
+    moong_dal: 500.0,
+    onion: 500.0,
+    tomato: 500.0,
+    milk: 1000.0,
+    mustard_oil: 250.0,
+    spices_basic: 100.0
   });
 
-  const [isGroceryDrawerOpen, setIsGroceryDrawerOpen] = useState(false);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [toast, setToast] = useState(null);
+  const [planData, setPlanData] = useState(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
 
-  // Save changes to localStorage
+  // Initial Data Fetch
   useEffect(() => {
-    localStorage.setItem('smartpantry_items', JSON.stringify(pantryItems));
-  }, [pantryItems]);
+    async function init() {
+      try {
+        const [foodsRes, profRes, pantryRes] = await Promise.all([
+          fetchFoods(),
+          fetchProfile().catch(() => null),
+          fetchPantry().catch(() => null)
+        ]);
 
-  useEffect(() => {
-    localStorage.setItem('smartpantry_bookmarks', JSON.stringify(bookmarkedMeals));
-  }, [bookmarkedMeals]);
+        if (foodsRes) setFoods(foodsRes);
+        if (profRes && profRes.age) setProfile(profRes);
+        if (pantryRes && pantryRes.pantry && Object.keys(pantryRes.pantry).length > 0) {
+          setPantry(pantryRes.pantry);
+        }
 
-  useEffect(() => {
-    localStorage.setItem('smartpantry_gemini_key', apiKey);
-  }, [apiKey]);
+        // Generate baseline plan from loaded data
+        const initialPlan = await generateFullPlan({
+          profile: profRes?.age ? profRes : profile,
+          pantry: pantryRes?.pantry && Object.keys(pantryRes.pantry).length > 0 ? pantryRes.pantry : pantry,
+          extra_budget_inr: profRes?.extra_budget_inr || 0.0
+        });
 
-  // Initial meal plan generation on mount
-  useEffect(() => {
-    handleGeneratePlan(true);
+        setPlanData(initialPlan);
+      } catch (err) {
+        console.error('Initialization error:', err);
+      } finally {
+        setIsInitialLoading(false);
+      }
+    }
+    init();
   }, []);
 
-  const showToast = (message, type = 'success') => {
-    setToast({ message, type });
-  };
-
-  // Pantry Management
-  const handleAddItem = (name, category) => {
-    const exists = pantryItems.some(i => i.name.toLowerCase() === name.toLowerCase());
-    if (exists) {
-      showToast(`"${name}" is already in your pantry!`, 'warning');
-      return;
-    }
-    const newItem = { id: Date.now().toString(), name, category };
-    setPantryItems(prev => [...prev, newItem]);
-    showToast(`Added "${name}" to pantry!`);
-  };
-
-  const handleRemoveItem = (id) => {
-    const item = pantryItems.find(i => i.id === id);
-    setPantryItems(prev => prev.filter(i => i.id !== id));
-    if (item) showToast(`Removed "${item.name}"`);
-  };
-
-  const handleClearCategory = (categoryId) => {
-    setPantryItems(prev => prev.filter(i => i.category !== categoryId));
-    showToast(`Cleared category items`);
-  };
-
-  const handleClearAll = () => {
-    setPantryItems([]);
-    showToast(`Cleared entire pantry`, 'warning');
-  };
-
-  const handleResetPantry = () => {
-    setPantryItems(INITIAL_PANTRY_ITEMS);
-    showToast(`Reset pantry to default staples!`);
-  };
-
-  // Bookmark Toggle
-  const handleToggleBookmark = (mealId) => {
-    setBookmarkedMeals(prev => {
-      const active = prev.includes(mealId);
-      if (active) {
-        showToast('Meal removed from bookmarks');
-        return prev.filter(id => id !== mealId);
-      } else {
-        showToast('Meal saved to bookmarks!');
-        return [...prev, mealId];
-      }
-    });
-  };
-
-  // Generate Meal Plan Action
-  const handleGeneratePlan = async (isInitial = false) => {
-    setIsLoading(true);
+  const handleGeneratePlan = async () => {
+    setIsGenerating(true);
     try {
-      const plan = await generateMealPlanWithAI({
-        pantryItems,
-        duration,
-        dietPreference,
-        strictness,
-        targetCalories,
-        targetProtein,
-        apiKey
+      // 1. Save profile and pantry to SQLite
+      await Promise.all([
+        saveProfile(profile).catch(() => null),
+        savePantry(
+          Object.entries(pantry).map(([food_id, quantity]) => {
+            const f = foods.find(item => item.id === food_id);
+            return { food_id, quantity, unit: f?.unit || 'g' };
+          })
+        ).catch(() => null)
+      ]);
+
+      // 2. Call Plan Generate API
+      const res = await generateFullPlan({
+        profile,
+        pantry,
+        extra_budget_inr: profile.extra_budget_inr || 0.0
       });
 
-      setMealPlan(plan);
+      setPlanData(res);
+      setActiveView('dashboard');
 
-      if (!isInitial) {
-        showToast(`Successfully generated ${duration}-Day Meal Chart!`);
-        try {
-          confetti({
-            particleCount: 50,
-            spread: 60,
-            origin: { y: 0.7 }
-          });
-        } catch (e) {
-          // Fallback if confetti fails
-        }
+      try {
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          origin: { y: 0.7 }
+        });
+      } catch (e) {
+        // Confetti fallback
       }
     } catch (err) {
-      console.error(err);
-      showToast('Error generating meal plan. Please check settings.', 'warning');
+      console.error('Plan generation failed:', err);
     } finally {
-      setIsLoading(false);
+      setIsGenerating(false);
     }
   };
 
-  // Extract total count of missing ingredients across current plan
-  const countMissingIngredients = () => {
-    if (!mealPlan || !mealPlan.days) return 0;
-    const set = new Set();
-    mealPlan.days.forEach(d => {
-      d.meals.forEach(m => {
-        m.missingIngredients?.forEach(i => set.add(i));
+  const handleExtraBudgetChange = async (newVal) => {
+    try {
+      const updatedProfile = { ...profile, extra_budget_inr: newVal };
+      setProfile(updatedProfile);
+
+      const res = await upgradeBudget({
+        profile: updatedProfile,
+        pantry,
+        extra_budget_inr: newVal
       });
-    });
-    return set.size;
+
+      if (res && res.meal_plan) {
+        setPlanData(prev => ({
+          ...prev,
+          extra_budget: res.extra_budget,
+          meal_plan: res.meal_plan
+        }));
+      }
+    } catch (err) {
+      console.error('Budget upgrade failed:', err);
+    }
   };
 
+  const handleRefreshPlan = async () => {
+    setIsGenerating(true);
+    try {
+      const res = await generateFullPlan({
+        profile,
+        pantry,
+        extra_budget_inr: profile.extra_budget_inr || 0.0
+      });
+      setPlanData(res);
+    } catch (err) {
+      console.error('Refresh plan error:', err);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  if (isInitialLoading) {
+    return (
+      <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center space-y-4">
+        <Loader2 className="w-10 h-10 text-amber-500 animate-spin" />
+        <h2 className="text-xl font-bold tracking-tight">Initializing NutriForge Engine...</h2>
+        <p className="text-xs text-slate-500">Loading ground-truth datasets and verifying mathematical invariants</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans pb-16">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-black">
       
       {/* Sticky Header Navbar */}
       <Header
-        pantryCount={pantryItems.length}
-        missingCount={countMissingIngredients()}
-        duration={duration}
-        targetCalories={targetCalories}
-        targetProtein={targetProtein}
-        onOpenGroceryDrawer={() => setIsGroceryDrawerOpen(true)}
-        onOpenSettings={() => setIsSettingsOpen(true)}
-        onResetPantry={handleResetPantry}
-        hasApiKey={!!apiKey}
+        activeView={activeView}
+        setActiveView={setActiveView}
+        profile={profile}
+        sufficiency={planData?.sufficiency}
+        minimumGap={planData?.minimum_gap}
       />
 
-      {/* Hero Header Banner */}
-      <section className="bg-gradient-to-b from-emerald-900 via-emerald-950 to-slate-950 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-emerald-900/40">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-400" /> AI Kitchen Inventory & Macro Engine
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-              Turn Kitchen Ingredients into <span className="text-emerald-400">Nutrient-Balanced</span> Meals
-            </h1>
-            <p className="text-sm sm:text-base text-slate-300">
-              Input what you have in your fridge & pantry. SmartPantry Chef creates complete calorie & macro calculated breakfast, lunch, dinner, and snacks.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => handleGeneratePlan(false)}
-              disabled={isLoading}
-              className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-sm rounded-2xl shadow-lg shadow-emerald-500/25 transition-all flex items-center gap-2"
-            >
-              <ChefHat className="w-5 h-5" /> Quick Regenerate
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Container */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 z-10 w-full space-y-8">
-        
-        {/* Section 1 & 2: Pantry Manager & Plan Config Controls */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Column: Kitchen Inventory (7 cols) */}
-          <div className="lg:col-span-7">
-            <PantryManager
-              pantryItems={pantryItems}
-              onAddItem={handleAddItem}
-              onRemoveItem={handleRemoveItem}
-              onClearCategory={handleClearCategory}
-              onClearAll={handleClearAll}
-            />
-          </div>
-
-          {/* Right Column: Meal Config Controls (5 cols) */}
-          <div className="lg:col-span-5">
-            <PlanConfig
-              duration={duration}
-              setDuration={setDuration}
-              dietPreference={dietPreference}
-              setDietPreference={setDietPreference}
-              strictness={strictness}
-              setStrictness={setStrictness}
-              targetCalories={targetCalories}
-              setTargetCalories={setTargetCalories}
-              targetProtein={targetProtein}
-              setTargetProtein={setTargetProtein}
-              onGenerate={() => handleGeneratePlan(false)}
-              isLoading={isLoading}
-            />
-          </div>
-
-        </div>
-
-        {/* Section 3: Nutrient Summary Bar */}
-        {mealPlan && (
-          <NutritionSummary
-            summary={mealPlan.summary}
-            targetCalories={targetCalories}
-            targetProtein={targetProtein}
+      {/* Main Content Router */}
+      <main className="flex-1 pb-16">
+        {activeView === 'wizard' && (
+          <OnboardingWizard
+            profile={profile}
+            setProfile={setProfile}
+            pantry={pantry}
+            setPantry={setPantry}
+            foods={foods}
+            onGeneratePlan={handleGeneratePlan}
+            isGenerating={isGenerating}
           />
         )}
 
-        {/* Section 4: Meal Schedule Cards (1-Day or 7-Day View) */}
-        {mealPlan && (
-          <div className="space-y-4">
-            <MealScheduleCard
-              plan={mealPlan}
-              bookmarkedMeals={bookmarkedMeals}
-              onToggleBookmark={handleToggleBookmark}
-            />
-          </div>
+        {activeView === 'dashboard' && planData && (
+          <DashboardView
+            biometrics={planData.biometrics}
+            planSummary={planData.meal_plan?.[0]?.summary}
+            goal={profile.goal}
+            onNavigateToMeals={() => setActiveView('meals')}
+          />
         )}
 
+        {activeView === 'meals' && planData && (
+          <MealPlanView
+            mealPlan={planData.meal_plan}
+            setMealPlan={(updated) => setPlanData(prev => ({ ...prev, meal_plan: updated }))}
+            sufficiency={planData.sufficiency}
+            minimumGap={planData.minimum_gap}
+            extraBudget={planData.extra_budget}
+            onExtraBudgetChange={handleExtraBudgetChange}
+            onRefreshPlan={handleRefreshPlan}
+            targetCalories={planData.biometrics?.target_calories || 2000}
+            targetProtein={planData.biometrics?.protein_target_g || 100}
+            foods={foods}
+          />
+        )}
+
+        {activeView === 'workouts' && planData && (
+          <WorkoutView
+            workoutPlan={planData.workout_plan}
+            setWorkoutPlan={(updated) => setPlanData(prev => ({ ...prev, workout_plan: updated }))}
+            profile={profile}
+            setProfile={setProfile}
+            pantry={pantry}
+            extraBudget={planData.extra_budget}
+          />
+        )}
       </main>
 
-      {/* Slide-Over Missing Groceries Drawer */}
-      <GroceryDrawer
-        isOpen={isGroceryDrawerOpen}
-        onClose={() => setIsGroceryDrawerOpen(false)}
-        plan={mealPlan}
-      />
-
-      {/* Settings Modal (Gemini API Config) */}
-      <SettingsModal
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-        apiKey={apiKey}
-        onSaveApiKey={(key) => {
-          setApiKey(key);
-          showToast(key ? 'Gemini API Key saved!' : 'Gemini API Key removed');
-        }}
-      />
-
-      {/* Toast Notification */}
-      {toast && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(null)}
-        />
-      )}
-
       {/* Footer */}
-      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-200 text-center text-xs text-slate-500">
-        <p>SmartPantry Chef • Zero Waste AI Kitchen Inventory Manager & Macro Planner</p>
+      <footer className="border-t border-slate-900 bg-slate-950 py-6 text-center text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <span>⚡ NutriForge — Deterministic Pantry, Budget-Gap & Physique Planner</span>
+          <span>Zero AI Hallucinations • 100% Mathematical Rigor (4P + 4C + 9F == kcal)</span>
+        </div>
       </footer>
 
     </div>
