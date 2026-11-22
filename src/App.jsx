@@ -15,12 +15,14 @@ import {
   upgradeBudget
 } from './services/api';
 
+import defaultFoods from './data/defaultFoods.json';
 import confetti from 'canvas-confetti';
 import { Loader2 } from 'lucide-react';
 
 export default function App() {
   const [activeView, setActiveView] = useState('wizard');
-  const [foods, setFoods] = useState([]);
+  const [foods, setFoods] = useState(defaultFoods);
+  const [backendError, setBackendError] = useState(null);
   const [profile, setProfile] = useState({
     age: 24,
     sex: 'male',
@@ -64,22 +66,27 @@ export default function App() {
           fetchPantry().catch(() => null)
         ]);
 
-        if (foodsRes) setFoods(foodsRes);
+        if (foodsRes && Array.isArray(foodsRes) && foodsRes.length > 0) {
+          setFoods(foodsRes);
+        }
         if (profRes && profRes.age) setProfile(profRes);
         if (pantryRes && pantryRes.pantry && Object.keys(pantryRes.pantry).length > 0) {
           setPantry(pantryRes.pantry);
         }
 
-        // Generate baseline plan from loaded data
-        const initialPlan = await generateFullPlan({
-          profile: profRes?.age ? profRes : profile,
-          pantry: pantryRes?.pantry && Object.keys(pantryRes.pantry).length > 0 ? pantryRes.pantry : pantry,
-          extra_budget_inr: profRes?.extra_budget_inr || 0.0
-        });
-
-        setPlanData(initialPlan);
+        // Try generating initial plan from loaded data if backend is responsive
+        try {
+          const initialPlan = await generateFullPlan({
+            profile: profRes?.age ? profRes : profile,
+            pantry: pantryRes?.pantry && Object.keys(pantryRes.pantry).length > 0 ? pantryRes.pantry : pantry,
+            extra_budget_inr: profRes?.extra_budget_inr || 0.0
+          });
+          setPlanData(initialPlan);
+        } catch (planErr) {
+          console.warn('Initial background plan generation deferred:', planErr);
+        }
       } catch (err) {
-        console.error('Initialization error:', err);
+        console.warn('Initialization notice:', err);
       } finally {
         setIsInitialLoading(false);
       }
@@ -89,6 +96,7 @@ export default function App() {
 
   const handleGeneratePlan = async () => {
     setIsGenerating(true);
+    setBackendError(null);
     try {
       // 1. Save profile and pantry to SQLite
       await Promise.all([
@@ -122,6 +130,9 @@ export default function App() {
       }
     } catch (err) {
       console.error('Plan generation failed:', err);
+      setBackendError(
+        'Could not reach the FastAPI backend server. If you just deployed on Render free tier, the backend takes ~30-45 seconds to spin up from cold sleep. Please wait 30 seconds and click Generate again, or ensure VITE_API_URL is set in Vercel settings.'
+      );
     } finally {
       setIsGenerating(false);
     }
@@ -187,6 +198,22 @@ export default function App() {
         sufficiency={planData?.sufficiency}
         minimumGap={planData?.minimum_gap}
       />
+
+      {/* Backend Notice / Error Guidance Banner */}
+      {backendError && (
+        <div className="bg-amber-950/80 border-b border-amber-500/40 px-4 py-3 text-center text-xs text-amber-200 flex items-center justify-between gap-3 animate-fade-in">
+          <div className="flex-1 text-center font-medium">
+            ⚠️ {backendError}
+          </div>
+          <button
+            type="button"
+            onClick={() => setBackendError(null)}
+            className="text-amber-400 hover:text-white font-black text-sm px-2 cursor-pointer"
+          >
+            ✕
+          </button>
+        </div>
+      )}
 
       {/* Main Content Router */}
       <main className="flex-1 pb-16">

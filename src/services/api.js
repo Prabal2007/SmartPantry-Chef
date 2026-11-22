@@ -1,10 +1,26 @@
+import defaultFoods from '../data/defaultFoods.json';
+
 const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 export async function fetchFoods(category = null) {
-  const url = category ? `${API_BASE}/foods?category=${category}` : `${API_BASE}/foods`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error('Failed to fetch foods');
-  return res.json();
+  try {
+    const url = category ? `${API_BASE}/foods?category=${category}` : `${API_BASE}/foods`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      throw new Error('Received non-JSON response from backend');
+    }
+    const data = await res.json();
+    if (Array.isArray(data) && data.length > 0) return data;
+    return defaultFoods;
+  } catch (err) {
+    console.warn('Backend unavailable or initializing, using bundled foods catalog:', err);
+    if (category) {
+      return defaultFoods.filter(f => f.category === category);
+    }
+    return defaultFoods;
+  }
 }
 
 export async function fetchDishes(slot = null, dietType = null) {
