@@ -70,7 +70,7 @@ python backend/scripts/verify_personas.py
 - **5-Gate Sufficiency Audit:**
   - Gate 1: Protein $\ge 90\%$ weekly target
   - Gate 2: Calories $\ge 90\%$ weekly target
-  - Gate 3: Vegetables $\ge 1400$g (14 servings)
+  - Gate 3: Vegetables $\ge 1400gm$ (14 servings)
   - Gate 4: Fruits $\ge 7$ servings
   - Gate 5: Cookable dishes available for all 4 slots (Breakfast, Lunch, Snack, Dinner)
 - **Branch 1 (Sufficient):** Status banner **"100% Pantry Covered (₹0 extra)"**.
