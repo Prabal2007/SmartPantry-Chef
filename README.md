@@ -2,6 +2,9 @@
 
 **NutriForge** is a production-grade, mathematically rigorous web application that generates deterministic diet plans, pantry-gap investment recommendations, and Gym / Home workout timetables to guide a user to their target build.
 
+> **Course Deliverables (B.Tech Sem-3 Software Engineering):**  
+> 📊 **[View Presentation Deck Online (Slides 1–6)](./presentation/README.md)** &bull; 📥 **[Download PowerPoint (.pptx)](./presentation/NutriForge_Presentation.pptx)** &bull; 📄 **[Download Presentation (PDF)](./presentation/NutriForge_Presentation.pdf)** &bull; 📄 **[View IEEE-830 SRS Document (PDF)](./SRS/SRS.pdf)**
+
 ---
 
 ## 🛡️ Non-Negotiable Engineering Invariants
